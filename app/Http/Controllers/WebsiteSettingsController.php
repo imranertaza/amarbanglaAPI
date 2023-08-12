@@ -10,7 +10,11 @@ use Illuminate\Http\JsonResponse;
 class WebsiteSettingsController extends Controller
 {
     protected string $imagePath = "/var/www/amarbangla.dn/public_html/uploads/website_image/";
-    public function slider_banners() : object {
+
+    /**
+     * @return JsonResponse
+     */
+    public function slider_banners() {
         for($i=1; $i<=3; $i++){
             $img_name = WebsiteSettings::where('label', 'slider_'.$i.'_mob')->get()[0]->value;
             $sliderImage = $this->imagePath.$img_name;
