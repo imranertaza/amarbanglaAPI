@@ -61,4 +61,4 @@ jobs:
 #          QUEUE_DRIVER: "sync"
 
       - name: "Run PHPUnit"
-        run: "vendor/bin/phpunit"
+        run: "php vendor/bin/phpunit tests"
