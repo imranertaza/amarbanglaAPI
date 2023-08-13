@@ -52,13 +52,13 @@ jobs:
 #        run: "|
 #            npm install
 #            npm run production"
-      - name: "Execute tests (Unit and Feature tests) via PHPUnit"
-        env:
-          DB_CONNECTION: "sqlite"
-          DB_DATABASE: "database/database.sqlite"
-          CACHE_DRIVER: "array"
-          SESSION_DRIVER: "array"
-          QUEUE_DRIVER: "sync"
+#      - name: "Execute tests (Unit and Feature tests) via PHPUnit"
+#        env:
+#          DB_CONNECTION: "sqlite"
+#          DB_DATABASE: "database/database.sqlite"
+#          CACHE_DRIVER: "array"
+#          SESSION_DRIVER: "array"
+#          QUEUE_DRIVER: "sync"
 
       - name: "Run PHPUnit"
         run: "vendor/bin/phpunit"
