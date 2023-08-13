@@ -45,20 +45,20 @@ jobs:
       - name: "Directory Permissions"
         run: "chmod -R 777 storage bootstrap/cache"
       - name: "Create Database"
-        run: |
+        run: "|
           mkdir -p database
-          touch database/database.sqlite
+          touch database/database.sqlite"
       - name: "Compile assets"
-        run: |
+        run: "|
             npm install
-            npm run production
+            npm run production"
       - name: "Execute tests (Unit and Feature tests) via PHPUnit"
         env:
-          DB_CONNECTION: sqlite
-          DB_DATABASE: database/database.sqlite
-          CACHE_DRIVER: array
-          SESSION_DRIVER: array
-          QUEUE_DRIVER: sync
+          DB_CONNECTION: "sqlite"
+          DB_DATABASE: "database/database.sqlite"
+          CACHE_DRIVER: "array"
+          SESSION_DRIVER: "array"
+          QUEUE_DRIVER: "sync"
 
       - name: "Run PHPUnit"
         run: "vendor/bin/phpunit"
