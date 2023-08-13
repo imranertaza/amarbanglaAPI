@@ -5,8 +5,8 @@ on:
   push:
     branches:
       - "master"
-  schedule:
-    - cron: "42 3 * * *"
+#  schedule:
+#    - cron: "42 3 * * *"
 
 jobs:
   phpunit:
@@ -36,10 +36,10 @@ jobs:
           coverage: "none"
           ini-values: "zend.assertions=1"
 
-      - name: "Install dependencies with Composer"
-        uses: "ramsey/composer-install@v1"
-        with:
-          dependency-versions: "${{ matrix.dependencies }}"
+      - name: "Copy .env"
+        run: php -r "file_exists('.env') || copy('.env.example', '.env');"
+      - name: "Install Dependencies"
+        run: "composer install -q --no-ansi --no-interaction --no-scripts --no-progress"
 
       - name: "Run PHPUnit"
         run: "vendor/bin/phpunit"
