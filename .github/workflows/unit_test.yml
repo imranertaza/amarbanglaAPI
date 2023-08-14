@@ -41,5 +41,9 @@ jobs:
         with:
           dependency-versions: "${{ matrix.dependencies }}"
 
+      - name: "Preparing laravel project"
+        run: |
+          cp .env.example .env
+          php artisan key:generate
       - name: "Run PHPUnit"
         run: "vendor/bin/phpunit"
