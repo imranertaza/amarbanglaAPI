@@ -45,7 +45,7 @@ jobs:
         run: chmod -R 777 storage bootstrap/cache
       - name: Change mysql sql_mode
         run: >
-          docker exec somemysql mysql -u root -e "SET GLOBAL sql_mode = '';"
+          docker exec somemysql mysql -u root -e "SET GLOBAL sql_mode = 'ALLOW_INVALID_DATES';"
 #      - name: Create Database
 #        run: |
 #          mkdir -p database
