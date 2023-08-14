@@ -44,7 +44,8 @@ jobs:
       - name: Directory Permissions
         run: chmod -R 777 storage bootstrap/cache
       - name: Change mysql sql_mode
-          run: docker exec somemysql mysql -u root -e "SET GLOBAL sql_mode = '';"
+        run: >
+          docker exec somemysql mysql -u root -e "SET GLOBAL sql_mode = '';"
 #      - name: Create Database
 #        run: |
 #          mkdir -p database
