@@ -48,12 +48,13 @@ jobs:
 
       - name: "Create Database"
         run: |
+          mkdir -p database
           touch database/database.sqlite
 
-      - name: "Adding sqlite configuration in .env file"
-        env:
-          DB_CONNECTION: sqlite
-          DB_DATABASE: database/database.sqlite
+      - name: Execute tests (Unit and Feature tests) via PHPUnit
+          env:
+            DB_CONNECTION: sqlite
+            DB_DATABASE: database/database.sqlite
 
       - name: "Run PHPUnit"
         run: "vendor/bin/phpunit"
