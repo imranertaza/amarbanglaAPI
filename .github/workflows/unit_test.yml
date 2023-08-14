@@ -52,8 +52,8 @@ jobs:
 
       - name: "Adding sqlite configuration in .env file"
         env:
-          DB_CONNECTION: "sqlite"
-          DB_DATABASE: "database/database.sqlite"
+          DB_CONNECTION: sqlite
+          DB_DATABASE: database/database.sqlite
 
       - name: "Run PHPUnit"
         run: "vendor/bin/phpunit"
