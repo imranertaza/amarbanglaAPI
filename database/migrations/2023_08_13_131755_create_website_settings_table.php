@@ -14,13 +14,13 @@ return new class extends Migration
         Schema::create('website_settings', function (Blueprint $table) {
             $table->id();
             $table->string("label");
-            $table->string("value")->nullable()->default('null');
-            $table->integer("createdBy")->nullable()->default('null');
+            $table->string("value")->nullable()->default(null);
+            $table->integer("createdBy")->nullable()->default(null);
             $table->timestamp("createdDtm")->useCurrent();
-            $table->integer("updatedBy")->nullable()->default("null");
+            $table->integer("updatedBy")->nullable()->default(null);
             $table->timestamp("updatedDtm")->useCurrent()->useCurrentOnUpdate();
-            $table->integer("deleted")->nullable()->default('null');
-            $table->integer("deletedRole")->nullable()->default('null');
+            $table->integer("deleted")->nullable()->default(null);
+            $table->integer("deletedRole")->nullable()->default(null);
         });
     }
 
