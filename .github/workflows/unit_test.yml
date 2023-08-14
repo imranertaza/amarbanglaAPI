@@ -30,7 +30,7 @@ jobs:
           MYSQL_ALLOW_EMPTY_PASSWORD: yes
           MYSQL_DATABASE: test_amarbangla_db
         ports:
-          - 3306
+          - 32768
         options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
 
     steps:
@@ -49,7 +49,7 @@ jobs:
 #          touch database/database.sqlite
       - name: Configure database and migrate
         env:
-          DB_PORT: ${{ job.services.mysql.ports[3306] }}
+          DB_PORT: ${{ job.services.mysql.ports[32768] }}
 #          DB_CONNECTION: sqlite
 #          DB_HOST: localhost
 #          DB_DATABASE: database/database.sqlite
