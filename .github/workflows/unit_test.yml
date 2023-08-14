@@ -42,5 +42,7 @@ jobs:
           DB_CONNECTION: sqlite
           DB_DATABASE: database/database.sqlite
         run: php artisan migrate
+      - name: Seeding database
+        run: php artisan db:seed
       - name: Run PHPUnit Tests
         run: vendor/bin/phpunit
