@@ -49,8 +49,14 @@ jobs:
         mkdir -p database
         touch database/database.sqlite
 
-    - name: Execute tests (Unit and Feature tests) via PHPUnit
-      env:
-        DB_CONNECTION: sqlite
-        DB_DATABASE: database/database.sqlite
+    - name: .env file setup
+        env:
+          DB_CONNECTION: sqlite
+          DB_DATABASE: database/database.sqlite
+        run: php artisan migrate
+
+    - name: Database Seeding
+      run: php artisan db:seed
+
+    - name: Run PHPUnit Tests
       run: vendor/bin/phpunit
