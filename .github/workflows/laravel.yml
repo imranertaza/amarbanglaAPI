@@ -19,9 +19,7 @@ jobs:
           - "7.4"
         dependencies:
           - "highest"
-        include:
-          - dependencies: "lowest"
-            php-version: "8.1"
+          - "lowest"
 
     steps:
     - name: "Install PHP"
