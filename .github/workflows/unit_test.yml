@@ -57,7 +57,9 @@ jobs:
 #          DB_HOST: localhost
 #          DB_DATABASE: database/database.sqlite
         run: |
+          sudo apt install php8.1-mysql
           php artisan config:clear
+          php -v
           php -m
           php artisan migrate
       - name: Seeding database
