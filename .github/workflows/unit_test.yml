@@ -45,8 +45,8 @@ jobs:
         run: chmod -R 777 storage bootstrap/cache
 #      - name: Connect with Mysql
 #        run: mysql -u root
-      - name: Create database
-          run: "CREATE DATABASE test_amarbangla_db;"
+#      - name: Create database
+#          run: "CREATE DATABASE test_amarbangla_db;"
       - name: Show Databases
           run: "SHOW DATABASES;"
       - name: Change mysql sql_mode
