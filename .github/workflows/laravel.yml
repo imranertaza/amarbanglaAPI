@@ -50,10 +50,10 @@ jobs:
         touch database/database.sqlite
 
     - name: .env file setup
-        env:
-          DB_CONNECTION: sqlite
-          DB_DATABASE: database/database.sqlite
-        run: php artisan migrate
+      env:
+        DB_CONNECTION: sqlite
+        DB_DATABASE: database/database.sqlite
+      run: php artisan migrate
 
     - name: Database Seeding
       run: php artisan db:seed
