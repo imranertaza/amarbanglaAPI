@@ -52,7 +52,7 @@ jobs:
     - name: .env file setup
       env:
         DB_CONNECTION: sqlite
-        DB_DATABASE: database/database.sqlite
+        DB_DATABASE: ss/database/database.sqlite
       run: php artisan migrate --seed
 
 #    - name: Database Seeding
