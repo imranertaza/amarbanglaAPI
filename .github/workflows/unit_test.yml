@@ -52,8 +52,6 @@ jobs:
       - name: Change mysql sql_mode
         run: >
           docker exec somemysql mysql -u root -e "SET GLOBAL sql_mode = 'ALLOW_INVALID_DATES';"
-          CREATE DATABASE test_amarbangla_db;
-          SHOW DATABASES;
 #      - name: Create Database
 #        run: |
 #          mkdir -p database
