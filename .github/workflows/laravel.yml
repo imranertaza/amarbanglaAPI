@@ -53,11 +53,10 @@ jobs:
       env:
         DB_CONNECTION: sqlite
         DB_DATABASE: database/database.sqlite
-        DB_PORT:
-      run: php artisan migrate
+      run: php artisan migrate --seed
 
-    - name: Database Seeding
-      run: php artisan db:seed
+#    - name: Database Seeding
+#      run: php artisan db:seed
 
     - name: Run PHPUnit Tests
       run: vendor/bin/phpunit
