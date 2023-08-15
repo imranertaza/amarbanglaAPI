@@ -46,7 +46,7 @@ jobs:
       - name: Install Mysql Server
         run: sudo apt-get install mysql-server
       - name: Connect with Mysql
-        run: mysql -u root -p
+        run: mysql -u root
 #      - name: Create database
 #          run: "CREATE DATABASE test_amarbangla_db;"
 #      - name: Show Databases
