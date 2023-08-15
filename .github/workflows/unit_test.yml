@@ -58,6 +58,7 @@ jobs:
 #          DB_DATABASE: database/database.sqlite
         run: |
           php artisan config:clear
+          php -m
           php artisan migrate
       - name: Seeding database
         run: php artisan db:seed
