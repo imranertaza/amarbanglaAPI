@@ -27,7 +27,6 @@ class WebSettingsAPITest extends TestCase
      */
     public function testSliderBannersAPI_if_banners_shows(): void
     {
-        $this->assertSame(1,1);
         $this->get("get_sliders")
             ->assertStatus(200)
             ->assertJsonStructure(["data"=>["slider_1"]])
@@ -44,7 +43,6 @@ class WebSettingsAPITest extends TestCase
 
     public function testGetWebsiteSettings_if_array_has_key_status(): void
     {
-        //'{"data":"","status":200}';
         $data = $this->getJson("get_website_settings/home_banner_1");
         $this->assertArrayHasKey('status', $data->json());
     }
