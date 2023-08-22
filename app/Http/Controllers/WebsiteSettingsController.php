@@ -18,7 +18,7 @@ class WebsiteSettingsController extends Controller
         for($i=1; $i<=3; $i++){
             $img_name = WebsiteSettings::where('label', 'slider_'.$i.'_mob')->get()[0]->value;
             $sliderImage = $this->imagePath.$img_name;
-            $data['slider_'.$i] =  (!file_exists($sliderImage)) ? "slider_mo.jpg" : $img_name;
+            $data[]['slider'] =  (!file_exists($sliderImage)) ? "slider_mo.jpg" : $img_name;
         }
         $data['path'] = url("/uploads/website_image/");
         return response()->json(["data" => $data, "status"=>200], 200);
