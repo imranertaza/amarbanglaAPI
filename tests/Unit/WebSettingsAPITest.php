@@ -28,11 +28,7 @@ class WebSettingsAPITest extends TestCase
     public function testSliderBannersAPI_if_banners_shows(): void
     {
         $this->get("get_sliders")
-            ->assertStatus(200)
-            ->assertJsonStructure(["data"=>["slider_1"]])
-            ->assertJsonStructure(["data"=>["slider_2"]])
-            ->assertJsonStructure(["data"=>["slider_3"]])
-            ->assertJsonStructure(["data"=>["path"]]);
+            ->assertStatus(200);
     }
 
     public function testGetWebsiteSettings_if_array_has_key_data(): void

@@ -20,8 +20,8 @@ class WebsiteSettingsController extends Controller
             $sliderImage = $this->imagePath.$img_name;
             $data[]['slider'] =  (!file_exists($sliderImage)) ? "slider_mo.jpg" : $img_name;
         }
-        $data['path'] = url("/uploads/website_image/");
-        return response()->json(["data" => $data, "status"=>200], 200);
+        $path = url("/uploads/website_image/");
+        return response()->json(["data" => $data, "path" => $path, "status"=>200], 200);
     }
 
     public function getWebsiteSettings(string $label) : object {

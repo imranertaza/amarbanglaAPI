@@ -26,7 +26,10 @@ Route::get("get_website_settings/{label}", [WebsiteSettingsController::class, 'g
 
 
 Route::get("get_regular_shop_list/{limit?}/{orderBy?}/{orderType?}", [ShopController::class, 'getRegularShopsList']);
+Route::get("get_regular_shop_list_by_category/{shop_category}/{limit?}/{orderBy?}/{orderType?}", [ShopController::class, 'getRegularShopsListByCategory']);
 //Route::get("get_all_products", [ProductContoller::class, 'getPriorityProductList']);
+
+
 Route::get("get_popular_products/{limit?}/{orderType?}", [ProductContoller::class, 'getPopularProductList']);
 Route::get("get_hot_products/{limit?}/{orderType?}", [ProductContoller::class, 'getHotProductList']);
 Route::get("get_featured_products/{limit?}/{orderType?}", [ProductContoller::class, 'getFeaturedProductList']);
