@@ -16,16 +16,16 @@ class ShopController extends Controller
      * @param string $orderType
      * @return object
      */
-    public function getRegularShopsList(?Int $limit=0, ?string $orderBy=null, string $orderType='ASC') {
+    public function getRegularShopsList(?Int $limit=0, ?string $orderBy='ShopID', string $orderType='ASC') :object {
         $shop_list = Shops::select("sch_id as ShopID", "name as ShopName", "image")
-            ->where("priority", '0')
+            ->where("priority", '1')
             ->where("deleted", null)
             ->where("status", '1')
             ->where("opening_status", '1');
         if ($limit !== 0){
             $shop_list = $shop_list->limit($limit);
         }
-        if ($orderBy !== null){
+        if ($orderBy !== null) {
             $shop_list = $shop_list->orderBy($orderBy, $orderType);
         }
 
@@ -38,7 +38,7 @@ class ShopController extends Controller
     }
 
 
-    public function getRegularShopsListByCategory(Int $shopCategory, ?Int $limit=0, ?string $orderBy=null, string $orderType='ASC') {
+    public function getRegularShopsListByCategory(Int $shopCategory, ?Int $limit=0, ?string $orderBy=null, string $orderType='ASC') : object {
         $shop_list = Shops::select("sch_id as ShopID", "name as ShopName", "image")
             ->where("priority", '0')
             ->where("shop_cat_id", $shopCategory)
@@ -58,6 +58,16 @@ class ShopController extends Controller
             return response()->json(["data" => $shop_list->get(), "status" => 200], 200);
         }else {
             return response()->json(["data" => "No Shops found", "status" => 404], 404);
+        }
+    }
+
+
+    public function getShopDetails(String $shopID):object{
+        $shopInfo = Shops::where("sch_id", $shopID);
+        if ($shopInfo->count() > 0) {
+            return response()->json(["data"=>$shopInfo->get(), "status"=>200], 200);
+        }else {
+            return response()->json(["data"=>"No Result Found.", "status"=>404], 200);
         }
     }
 
