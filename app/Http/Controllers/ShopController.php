@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Shops;
+use App\Models\GeneralSettings;
 use http\Env\Response;
 use Illuminate\Http\Request;
 
@@ -62,8 +63,31 @@ class ShopController extends Controller
     }
 
 
-    public function getShopDetails(String $shopID):object{
+    public function getShopDetails(Int $shopID):object{
         $shopInfo = Shops::where("sch_id", $shopID);
+        if ($shopInfo->count() > 0) {
+            return response()->json(["data"=>$shopInfo->get(), "status"=>200], 200);
+        }else {
+            return response()->json(["data"=>"No Result Found.", "status"=>404], 200);
+        }
+    }
+
+
+    public function getShopSettingsInfo(Int $shopID, String $label):object{
+        $shopInfo = GeneralSettings::select("value")
+            ->where("sch_id", $shopID)
+            ->where("label", $label);
+        if ($shopInfo->count() > 0) {
+            return response()->json(["data"=>$shopInfo->get(), "status"=>200], 200);
+        }else {
+            return response()->json(["data"=>"No Result Found.", "status"=>404], 200);
+        }
+    }
+
+    public function getShopYoutubeURL(Int $shopID):object{
+        $shopInfo = GeneralSettings::select("value")
+            ->where("sch_id", $shopID)
+            ->where("label", "customer_panel_video");
         if ($shopInfo->count() > 0) {
             return response()->json(["data"=>$shopInfo->get(), "status"=>200], 200);
         }else {
