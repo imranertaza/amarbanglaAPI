@@ -27,6 +27,8 @@ Route::get("get_website_settings/{label}", [WebsiteSettingsController::class, 'g
 
 Route::get("get_regular_shop_list/{limit?}/{orderBy?}/{orderType?}", [ShopController::class, 'getRegularShopsList']);
 Route::get("get_regular_shop_list_by_category/{shop_category}/{limit?}/{orderBy?}/{orderType?}", [ShopController::class, 'getRegularShopsListByCategory']);
+Route::get("get_local_shop_list/{limit?}/{orderBy?}/{orderType?}", [ShopController::class, 'getLocalShopsList']);
+Route::get("get_local_shop_list_by_category/{shop_category}/{limit?}/{orderBy?}/{orderType?}", [ShopController::class, 'getLocalShopsListByCategory']);
 Route::get("get_shop_details/{shopID}/", [ShopController::class, 'getShopDetails']);
 Route::get("get_shop_youtube_url/{shopID}/", [ShopController::class, 'getShopYoutubeURL']);
 Route::get("get_shop_settings_info/{shopID}/{label}/", [ShopController::class, 'getShopSettingsInfo']);
