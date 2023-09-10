@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Models\Products;
 
 class ProductContoller extends Controller
 {
@@ -73,6 +74,15 @@ class ProductContoller extends Controller
         }
         if ($shopList->count() > 0) {
             return response()->json(["data"=>$shopList->get(), "status"=>200], 200);
+        }else {
+            return response()->json(["data"=>"No Result Found.", "status"=>404], 200);
+        }
+    }
+
+    public function getProductDetails(int $productID, int $shopID) : object {
+        $detailsQuery = Products::where('prod_id', $productID)->where('sch_id', $shopID);
+        if ($detailsQuery->get()->count() > 0) {
+            return response()->json(["data"=>$detailsQuery->first(), "status"=>200], 200);
         }else {
             return response()->json(["data"=>"No Result Found.", "status"=>404], 200);
         }

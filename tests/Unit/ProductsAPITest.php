@@ -175,6 +175,34 @@ class ProductsAPITest extends TestCase
 
 
 
+    /**
+     * Testing of getProductDetails API
+     */
+    public function testGetProductDetailsAPI(): void
+    {
+        $this->get("get_products_details/2/6")
+            ->assertStatus(200);
+    }
 
+
+    public function testGetProductDetailsWithoutShopID(): void
+    {
+        $this->get("get_featured_products/2")
+            ->assertStatus(200)->isNotFound();
+    }
+
+
+    public function testGetProductDetailsWithoutParameters(): void
+    {
+        $this->get("get_featured_products")
+            ->assertStatus(200)->isNotFound();
+    }
+
+
+    public function testGetProductDetailsFunction() : void {
+        $productController = new ProductContoller();
+        $response = $productController->getProductDetails(2, 6);
+        $this->assertArrayHasKey('data', $response->original);
+    }
 
 }

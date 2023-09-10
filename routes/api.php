@@ -38,3 +38,4 @@ Route::get("get_shop_settings_info/{shopID}/{label}/", [ShopController::class, '
 Route::get("get_popular_products/{limit?}/{orderType?}", [ProductContoller::class, 'getPopularProductList']);
 Route::get("get_hot_products/{limit?}/{orderType?}", [ProductContoller::class, 'getHotProductList']);
 Route::get("get_featured_products/{limit?}/{orderType?}", [ProductContoller::class, 'getFeaturedProductList']);
+Route::get("get_products_details/{productID}/{shopID}", [ProductContoller::class, 'getProductDetails']);
