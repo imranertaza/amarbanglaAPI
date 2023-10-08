@@ -89,4 +89,126 @@ class ProductContoller extends Controller
     }
 
 
+    // Search API functions start
+    /**
+     * Search Item with Limit And OrderType
+     * @param Int|null $limit
+     * @param string $orderType
+     * @param Request $request
+     * @return object
+     */
+    public function searchItemWithLimitAndOrderType(?Int $limit=0, string $orderType='ASC', Request $request) : object
+    {
+        $key = $request->post('search_item');
+        $carecter = substr($key, 0, 1);
+        if ($carecter == '#') {
+            $shopId = str_replace('#', '', $key);
+            return $this->searchShop($shopId, $limit, $orderType);
+        } else {
+            return $this->searchProduct($key, $limit, $orderType);
+        }
+    }
+
+
+    /**
+     * Search Item with Limit
+     * @param Int|null $limit
+     * @param Request $request
+     * @return object
+     */
+    public function searchItemWithLimit(?Int $limit=0, Request $request) : object
+    {
+        $key = $request->post('search_item');
+        $carecter = substr($key, 0, 1);
+        if ($carecter == '#') {
+            $shopId = str_replace('#', '', $key);
+            return $this->searchShop($shopId, $limit);
+        } else {
+            return $this->searchProduct($key, $limit);
+        }
+    }
+
+
+
+    /**
+     * Search Products API
+     * @param Request $request
+     * @return object
+     */
+    public function searchItem(Request $request) : object
+    {
+        $key = $request->post('search_item');
+        $carecter = substr($key, 0, 1);
+        if ($carecter == '#') {
+            $shopId = str_replace('#', '', $key);
+            return $this->searchShop($shopId);
+        } else {
+            return $this->searchProduct($key);
+        }
+    }
+
+
+
+    /**
+     * Product Search Function. It's a private function that is called by above functions.
+     * @param Int $key
+     * @param Int $limit
+     * @param string $orderType
+     * @return object
+     */
+    private function searchProduct(Int $key, Int $limit=10, String $orderType='ASC') : object {
+        $productList = DB::table("products")->select("*")
+            ->join('shops', 'products.sch_id', "=", "shops.sch_id")
+            ->where('shops.opening_status', '1')
+            ->where('shops.status', '1')
+            ->where('products.status', '1')
+            ->where("products.deleted", null)
+            ->where("products.name", 'LIKE', "%{$key}%")
+            ->where("products.name", 'LIKE', "%{$key}%")
+            ->orWhere("products.prod_id", 'LIKE', "%{$key}%")
+            ->orWhere("products.prod_id", 'LIKE', "%{$key}%")
+            ->orWhere("products.description", 'LIKE', "%{$key}%")
+            ->orderBy('products.prod_id', $orderType);
+
+        if($limit !== 0) {
+            $productList->limit($limit);
+        }
+
+        if ($productList->count() > 0) {
+            return response()->json(["data"=>$productList->get(), "status"=>200], 200);
+        }else {
+            return response()->json(["data"=>"No Result Found.", "status"=>404], 200);
+        }
+    }
+
+
+
+    /**
+     * Shop Search Function. It's a private function that is called by above functions.
+     * @param Int $shopId
+     * @param Int $limit
+     * @param string $orderType
+     * @return object
+     */
+    private function searchShop(Int $shopId, Int $limit=10, String $orderType='ASC') : object {
+        $shopList = DB::table("shops")->select("*")
+            ->where('shops.sch_id', $shopId)
+            ->where('shops.status', '1')
+            ->where('shops.opening_status', '1')
+            ->where('shops.deleted', null)
+            ->orderBy('shops.sch_id', $orderType);
+
+        if($limit !== 0) {
+            $shopList->limit($limit);
+        }
+
+        if ($shopList->count() > 0) {
+            return response()->json(["data"=>$shopList->get(), "status"=>200], 200);
+        }else {
+            return response()->json(["data"=>"No Result Found.", "status"=>404], 200);
+        }
+    }
+    // Search API functions End
+
+
 }

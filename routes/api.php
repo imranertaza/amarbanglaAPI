@@ -39,3 +39,8 @@ Route::get("get_popular_products/{limit?}/{orderType?}", [ProductContoller::clas
 Route::get("get_hot_products/{limit?}/{orderType?}", [ProductContoller::class, 'getHotProductList']);
 Route::get("get_featured_products/{limit?}/{orderType?}", [ProductContoller::class, 'getFeaturedProductList']);
 Route::get("get_products_details/{productID}/{shopID}", [ProductContoller::class, 'getProductDetails']);
+
+// Search API
+Route::post("search", [ProductContoller::class, 'searchItem']);
+Route::post("search/{limit?}", [ProductContoller::class, 'searchItemWithLimit']);
+Route::post("search/{limit?}/{orderType?}", [ProductContoller::class, 'searchItemWithLimitAndOrderType']);
