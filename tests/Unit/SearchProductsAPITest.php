@@ -52,7 +52,6 @@ class SearchProductsAPITest extends TestCase
         $productController = new ProductContoller();
         $response = new ReflectionMethod($productController, 'searchProduct');
         $result = $response->invokeArgs($productController, array(2, 2));
-//        dd($result);
 //        $response = $reflectionMethod->getMethod( 'searchProduct');
 //        $getMethod->setAccessible("public");
 //        $result = $getMethod->invoke($productController, );
@@ -74,13 +73,6 @@ class SearchProductsAPITest extends TestCase
     }
 
 
-//    public function testGetPopularProductListWithLimitZero(): void
-//    {
-//        $this->get("get_popular_products/0")
-//            ->assertStatus(200);
-//    }
-//
-//
 //    public function testGetPopularProductListWithLimit(): void
 //    {
 //        $this->get("get_popular_products/1")

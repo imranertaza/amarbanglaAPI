@@ -205,4 +205,23 @@ class ProductsAPITest extends TestCase
         $this->assertArrayHasKey('data', $response->original);
     }
 
+
+    /**
+     * Tesing get_products_image URL to get the image name.
+     */
+    public function testGetProductsImage(): void
+    {
+        $this->get("get_products_image/1")
+            ->assertStatus(200);
+    }
+
+    /**
+     * Tesing GetProductImage Function to get the image name.
+     */
+    public function testGetProductsImageFunction() : void {
+        $productController = new ProductContoller();
+        $response = $productController->getProductImage(1);
+        $this->assertArrayHasKey('data', $response->original);
+    }
+
 }
