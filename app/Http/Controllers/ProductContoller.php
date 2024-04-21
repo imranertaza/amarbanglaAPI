@@ -41,7 +41,7 @@ class ProductContoller extends Controller
     }
 
     public function getHotProductList(?Int $limit=0, string $orderType='ASC') : object {
-        $shopList = DB::table("products")->select("*")
+        $shopList = DB::table("products")->select("*", "products.name as name", "shops.name as shop_name")
             ->join('product_features', 'product_features.prod_id', "=", "products.prod_id")
             ->join('shops', 'products.sch_id', "=", "shops.sch_id")
             ->where('shops.priority', '1')
@@ -53,10 +53,27 @@ class ProductContoller extends Controller
             $shopList->limit($limit);
         }
         if ($shopList->count() > 0) {
-            return response()->json(["data"=>$shopList->get(), "status"=>200], 200);
+            $all_product_info = $shopList->get();
+            foreach($all_product_info as $k=>$singleProductInfo) {
+                foreach($singleProductInfo as $key=>$value) {
+                    $shopData[$k][$key] = $value;
+
+                    //update picture from demo product table if picture is null in product table
+                    if (($key == 'picture') && ($value == null) && ($all_product_info[$k]->demo_id) != null) {
+                        $shopData[$k]['picture'] = $this->getDemoProductPicture($all_product_info[$k]->demo_id);
+                    }
+                }
+            }
+            return response()->json(["data"=>$shopData, "status"=>200], 200);
         }else {
             return response()->json(["data"=>"No Result Found.", "status"=>404], 200);
         }
+    }
+
+    private function getDemoProductPicture(int $demoProductID) : string|null {
+        $demoProduct = DB::table("demo_products")->select("*")
+            ->where('id', $demoProductID)->first();
+        return $demoProduct->picture;
     }
 
 
