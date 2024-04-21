@@ -95,9 +95,13 @@ class ProductContoller extends Controller
      */
     public function getProductImage(int $productID) : object {
         $detailsQuery = Products::find($productID);
-        if ($detailsQuery->get()->count() > 0) {
-            $productImage = json_decode($detailsQuery->first()->picture);
-            return response()->json(["data"=>$productImage->{1}, "status"=>200], 200);
+        if (!empty($detailsQuery)){
+            if ($detailsQuery->get()->count() > 0) {
+                $productImage = json_decode($detailsQuery->first()->picture);
+                return response()->json(["data"=>$productImage->{1}, "status"=>200], 200);
+            }else {
+                return response()->json(["data"=>"no_image.jpg", "status"=>404], 200);
+            }
         }else {
             return response()->json(["data"=>"no_image.jpg", "status"=>404], 200);
         }
