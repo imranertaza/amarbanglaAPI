@@ -17,9 +17,9 @@ use \App\Http\Controllers\ProductContoller;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+// Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
 
 Route::get("get_sliders", [WebsiteSettingsController::class, 'slider_banners']);
 Route::get("get_website_settings/{label}", [WebsiteSettingsController::class, 'getWebsiteSettings']);
