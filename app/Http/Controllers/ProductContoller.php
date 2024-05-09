@@ -34,7 +34,15 @@ class ProductContoller extends Controller
             $shopList->limit($limit);
         }
         if ($shopList->count() > 0) {
-            return response()->json(["data"=>$shopList->get(), "status"=>200], 200);
+            $data = $shopList->get();
+            foreach($data as $key=>$value) {
+                if ($value->demo_id == null){
+                    $data[$key]->product_image_path = "https://amarbangla.com.bd/uploads/product_image/";
+                }else{
+                    $data[$key]->product_image_path = "https://amarbangla.com.bd/uploads/demo_product_image/";
+                }
+            }
+            return response()->json(["data"=>$data, "status"=>200], 200);
         }else {
             return response()->json(["data"=>"No Result Found.", "status"=>404], 200);
         }
