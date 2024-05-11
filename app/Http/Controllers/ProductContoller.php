@@ -21,7 +21,7 @@ class ProductContoller extends Controller
 //        dd($query);
 //    }
 
-    public function getPopularProductList(Int $limit=0, string $orderType='ASC') : object {
+    public function getPopularProductList(Int $offset=0, Int $limit=0, string $orderType='ASC') : object {
         $shopList = DB::table("products")->select("*")
             ->join('product_features', 'product_features.prod_id', "=", "products.prod_id")
             ->join('shops', 'products.sch_id', "=", "shops.sch_id")
@@ -29,16 +29,21 @@ class ProductContoller extends Controller
             ->where('products.status', '1')
             ->where("products.deleted", null)
             ->where("product_features.popular", 1)
+            ->offset($offset)
             ->orderBy('products.prod_id', $orderType);
         if($limit !== 0) {
             $shopList->limit($limit);
         }
-        if ($shopList->count() > 0) {
-            $data = $shopList->get();
+        $data = $shopList->get();
+        if (count($data) > 0) {
             foreach($data as $key=>$value) {
                 if ($value->demo_id == null){
                     $data[$key]->product_image_path = "https://amarbangla.com.bd/uploads/product_image/";
                 }else{
+                    //update picture from demo product table if picture is null in product table
+                    if ($value->picture == null) {
+                        $data[$key]->picture = $this->getDemoProductPicture($value->demo_id);
+                    }
                     $data[$key]->product_image_path = "https://amarbangla.com.bd/uploads/demo_product_image/";
                 }
             }
@@ -48,7 +53,7 @@ class ProductContoller extends Controller
         }
     }
 
-    public function getHotProductList(?Int $limit=0, string $orderType='ASC') : object {
+    public function getHotProductList(Int $offset=0, ?Int $limit=0, string $orderType='ASC') : object {
         $shopList = DB::table("products")->select("*", "products.name as name", "shops.name as shop_name")
             ->join('product_features', 'product_features.prod_id', "=", "products.prod_id")
             ->join('shops', 'products.sch_id', "=", "shops.sch_id")
@@ -56,12 +61,13 @@ class ProductContoller extends Controller
             ->where('products.status', '1')
             ->where("products.deleted", null)
             ->where("product_features.hot", 1)
+            ->offset($offset)
             ->orderBy('products.prod_id', $orderType);
         if($limit !== 0) {
             $shopList->limit($limit);
         }
-        if ($shopList->count() > 0) {
-            $all_product_info = $shopList->get();
+        $all_product_info = $shopList->get();
+        if (count($all_product_info) > 0) {
             foreach($all_product_info as $k=>$singleProductInfo) {
                 foreach($singleProductInfo as $key=>$value) {
                     $shopData[$k][$key] = $value;
@@ -85,7 +91,11 @@ class ProductContoller extends Controller
     }
 
 
-    public function getFeaturedProductList(?Int $limit=0, string $orderType='ASC') : object {
+    public function getFeaturedProductList(?Int $offset=0, ?Int $limit=0, string $orderType='ASC') : object {
+        
+        // Enable query logging
+        DB::connection()->enableQueryLog();
+        
         $shopList = DB::table("products")->select("*")
             ->join('product_features', 'product_features.prod_id', "=", "products.prod_id")
             ->join('shops', 'products.sch_id', "=", "shops.sch_id")
@@ -93,14 +103,29 @@ class ProductContoller extends Controller
             ->where('products.status', '1')
             ->where("products.deleted", null)
             ->where("product_features.featured", 1)
+            ->offset($offset)
             ->orderBy('products.prod_id', $orderType);
         if($limit !== 0) {
             $shopList->limit($limit);
         }
-        if ($shopList->count() > 0) {
-            return response()->json(["data"=>$shopList->get(), "status"=>200], 200);
+
+        
+        $data = $shopList->get();
+        if (count($data) > 0) {
+            foreach($data as $key=>$value) {
+                if ($value->demo_id == null){
+                    $data[$key]->product_image_path = "https://amarbangla.com.bd/uploads/product_image/";
+                }else{
+                    //update picture from demo product table if picture is null in product table
+                    if ($value->picture == null) {
+                        $data[$key]->picture = $this->getDemoProductPicture($value->demo_id);
+                    }
+                    $data[$key]->product_image_path = "https://amarbangla.com.bd/uploads/demo_product_image/";
+                }
+            }
+            return response()->json(["data"=>$data, "status"=>200], 200);
         }else {
-            return response()->json(["data"=>"No Result Found.", "status"=>404], 200);
+            return response()->json(["data"=>"No Result Found.", "status"=>404], 404);
         }
     }
 
@@ -253,6 +278,7 @@ class ProductContoller extends Controller
         }
     }
     // Search API functions End
+
 
 
 }

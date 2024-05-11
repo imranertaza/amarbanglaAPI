@@ -67,27 +67,27 @@ https://api.amarbangla.com.bd/api/get_website_settings/home_banner_3
 For popular product
 ---------------------------------------------------
 https://api.amarbangla.com.bd/api/get_popular_products
-https://api.amarbangla.com.bd/api/get_popular_products/{limit?}/{orderType?}
+https://api.amarbangla.com.bd/api/get_popular_products/{offset?}/{limit?}/{orderType?}
 
 Example:<br>
-https://api.amarbangla.com.bd/api/get_popular_products/3/ASC
+https://api.amarbangla.com.bd/api/get_popular_products/0/3/ASC
 
 For hot product
 ----------------------------------------------------
 https://api.amarbangla.com.bd/api/get_hot_products
-https://api.amarbangla.com.bd/api/get_hot_products/{limit?}/{orderType?}
+https://api.amarbangla.com.bd/api/get_hot_products/{offset?}/{limit?}/{orderType?}
 
 Example:<br>
-https://api.amarbangla.com.bd/api/get_hot_products/3/DESC
+https://api.amarbangla.com.bd/api/get_hot_products/0/3/DESC
 
 
 For featured product
 ------------------------------------------------------
 https://api.amarbangla.com.bd/api/get_featured_products
-https://api.amarbangla.com.bd/api/get_featured_products/{limit?}/{orderType?}
+https://api.amarbangla.com.bd/api/get_featured_products/{offset?}/{limit?}/{orderType?}
 
 Example:<br>
-https://api.amarbangla.com.bd/api/get_featured_products/3/ASC
+https://api.amarbangla.com.bd/api/get_featured_products/0/3/ASC
 
 
 Get Product Image
