@@ -29,8 +29,12 @@ class ProductContoller extends Controller
             ->where('products.status', '1')
             ->where("products.deleted", null)
             ->where("product_features.popular", 1)
-            ->offset($offset)
             ->orderBy('products.prod_id', $orderType);
+
+        if(($offset !== 0) && ($limit !== 0)) {
+            $shopList->offset($offset);
+        }
+
         if($limit !== 0) {
             $shopList->limit($limit);
         }
@@ -61,20 +65,27 @@ class ProductContoller extends Controller
             ->where('products.status', '1')
             ->where("products.deleted", null)
             ->where("product_features.hot", 1)
-            ->offset($offset)
             ->orderBy('products.prod_id', $orderType);
+
+        if(($offset !== 0) && ($limit !== 0)) {
+            $shopList->offset($offset);
+        }
+
         if($limit !== 0) {
             $shopList->limit($limit);
         }
         $all_product_info = $shopList->get();
         if (count($all_product_info) > 0) {
             foreach($all_product_info as $k=>$singleProductInfo) {
+                $shopData[$k]['product_image_path'] = "https://amarbangla.com.bd/uploads/product_image/";
+                
                 foreach($singleProductInfo as $key=>$value) {
                     $shopData[$k][$key] = $value;
-
+                    
                     //update picture from demo product table if picture is null in product table
                     if (($key == 'picture') && ($value == null) && ($all_product_info[$k]->demo_id) != null) {
                         $shopData[$k]['picture'] = $this->getDemoProductPicture($all_product_info[$k]->demo_id);
+                        $shopData[$k]['product_image_path'] = "https://amarbangla.com.bd/uploads/demo_product_image/";
                     }
                 }
             }
@@ -103,13 +114,16 @@ class ProductContoller extends Controller
             ->where('products.status', '1')
             ->where("products.deleted", null)
             ->where("product_features.featured", 1)
-            ->offset($offset)
             ->orderBy('products.prod_id', $orderType);
+
+        if(($offset !== 0) && ($limit !== 0)) {
+            $shopList->offset($offset);
+        }
+        
         if($limit !== 0) {
             $shopList->limit($limit);
         }
 
-        
         $data = $shopList->get();
         if (count($data) > 0) {
             foreach($data as $key=>$value) {
