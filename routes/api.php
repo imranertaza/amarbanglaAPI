@@ -43,6 +43,11 @@ Route::get("get_products_details/{productID}/{shopID}", [ProductContoller::class
 Route::get("get_products_image/{productID}/", [ProductContoller::class, 'getProductImage']);
 
 
+// Product option API
+Route::get("get_products_size_option/{productID}/{shopID}", [ProductContoller::class, 'getProductSizeOption']);
+Route::get("get_products_color_option/{productID}/{shopID}", [ProductContoller::class, 'getProductColorOption']);
+
+
 
 // Shop Category API
 Route::get("get_featured_shop_category/{limit?}/{orderType?}", [ShopCategoryController::class, 'getFeaturedShopCategory']);

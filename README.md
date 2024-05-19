@@ -124,6 +124,25 @@ https://api.amarbangla.com.bd/api/get_products_details/80/25
 https://api.amarbangla.com.bd/api/get_products_details/759/50
 
 
+Product Color Option API
+------------------------------------------------------------------
+https://api.amarbangla.com.bd/api/get_products_color_option/{productID}/{shopID}
+
+Example:<br>
+https://api.amarbangla.com.bd/api/get_products_color_option/80/25
+https://api.amarbangla.com.bd/api/get_products_color_option/87/25
+
+
+
+Product Size Option API
+------------------------------------------------------------------
+https://api.amarbangla.com.bd/api/get_products_size_option/{productID}/{shopID}
+
+Example:<br>
+https://api.amarbangla.com.bd/api/get_products_size_option/80/25
+https://api.amarbangla.com.bd/api/get_products_size_option/87/25
+
+
 
 Get Featured Shop Category list
 ------------------------------------------------
