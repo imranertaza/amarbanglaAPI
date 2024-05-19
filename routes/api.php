@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\ShopController;
 use \App\Http\Controllers\ProductContoller;
+use App\Http\Controllers\ShopCategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,6 +41,13 @@ Route::get("get_hot_products/{offset?}/{limit?}/{orderType?}", [ProductContoller
 Route::get("get_featured_products/{offset?}/{limit?}/{orderType?}", [ProductContoller::class, 'getFeaturedProductList']);
 Route::get("get_products_details/{productID}/{shopID}", [ProductContoller::class, 'getProductDetails']);
 Route::get("get_products_image/{productID}/", [ProductContoller::class, 'getProductImage']);
+
+
+
+// Shop Category API
+Route::get("get_featured_shop_category/{limit?}/{orderType?}", [ShopCategoryController::class, 'getFeaturedShopCategory']);
+Route::get("get_all_shop_category/{limit?}/{orderType?}", [ShopCategoryController::class, 'getAllShopCategory']);
+
 
 // Search API
 Route::post("search", [ProductContoller::class, 'searchItem']);

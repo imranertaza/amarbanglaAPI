@@ -122,3 +122,20 @@ https://api.amarbangla.com.bd/api/get_products_details/{productID}/{shopID}
 Example:<br>
 https://api.amarbangla.com.bd/api/get_products_details/80/25
 https://api.amarbangla.com.bd/api/get_products_details/759/50
+
+
+
+Get Featured Shop Category list
+------------------------------------------------
+https://api.amarbangla.com.bd/api/get_featured_shop_category/{limit?}/{orderType?}
+
+Example:<br>
+https://api.amarbangla.com.bd/api/get_featured_shop_category/2/DESC
+
+
+Get All Shop Category list
+------------------------------------------------
+https://api.amarbangla.com.bd/api/get_all_shop_category/{limit?}/{orderType?}
+
+Example:<br>
+https://api.amarbangla.com.bd/api/get_all_shop_category/2/DESC
