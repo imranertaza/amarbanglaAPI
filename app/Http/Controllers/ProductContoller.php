@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Products;
+use Exception;
 
 class ProductContoller extends Controller
 {
@@ -53,7 +54,7 @@ class ProductContoller extends Controller
             }
             return response()->json(["data"=>$data, "status"=>200], 200);
         }else {
-            return response()->json(["data"=>"No Result Found.", "status"=>404], 200);
+            return response()->json(["data"=>"No Result Found.", "status"=>404], 404);
         }
     }
 
@@ -91,7 +92,7 @@ class ProductContoller extends Controller
             }
             return response()->json(["data"=>$shopData, "status"=>200], 200);
         }else {
-            return response()->json(["data"=>"No Result Found.", "status"=>404], 200);
+            return response()->json(["data"=>"No Result Found.", "status"=>404], 404);
         }
     }
 
@@ -148,9 +149,109 @@ class ProductContoller extends Controller
         if ($detailsQuery->get()->count() > 0) {
             return response()->json(["data"=>$detailsQuery->first(), "status"=>200], 200);
         }else {
-            return response()->json(["data"=>"No Result Found.", "status"=>404], 200);
+            return response()->json(["data"=>"No Result Found.", "status"=>404], 404);
         }
     }
+
+
+
+    /**
+     * This API provides the Products Size Options
+     * 
+     * @param Int $productID
+     * @param Int $shopID
+     * 
+     * @return object
+     */
+    // public function getProductSizeOption(int $productID, int $shopID) : object {
+    //     $detailsInfo = Products::where('prod_id', $productID)->where('sch_id', $shopID)->first();
+    //     $allOptionProducts = Products::select('prod_id', 'size')->where('product_code', $detailsInfo->product_code)->where('sch_id', $shopID)->get();
+    //     $data = array();
+    //     if ($allOptionProducts->count() > 0) {
+    //         foreach($allOptionProducts as $key=>$val) {
+    //             if ($allOptionProducts[$key]['size'] != null) {
+    //                 $data[$key] = $val;
+    //             }
+    //         }
+    //         return response()->json(["data"=>$data, "status"=>200], 200);
+    //     }else {
+    //         return response()->json(["data"=>"No Result Found.", "status"=>200], 200);
+    //     }
+    // }
+
+
+    public function getProductSizeOption(int $productID, int $shopID) : object {
+        try {
+            $detailsInfo = Products::where('prod_id', $productID)->where('sch_id', $shopID)->first();
+    
+            if (!$detailsInfo) {
+                return response()->json(["data"=>"No Result Found.", "status"=>404], 404);
+            }
+    
+            $allOptionProducts = Products::select('prod_id', 'size')
+                                ->where('product_code', $detailsInfo->product_code)
+                                ->where('sch_id', $shopID)
+                                ->get();
+    
+            $data = [];
+            foreach($allOptionProducts as $key => $val) {
+                if ($val->size !== null) {
+                    $data[] = $val;
+                }
+            }
+    
+            if (!empty($data)) {
+                return response()->json(["data"=>$data, "status"=>200], 200);
+            } else {
+                return response()->json(["data"=>"No Result Found.", "status"=>404], 404);
+            }
+        } catch(Exception $e) {
+            return response()->json(["data"=>"An error occurred.", "status"=>500], 500);
+        }
+    }
+
+
+
+
+    /**
+     * This API provides the Products Color Options
+     * 
+     * @param Int $productID
+     * @param Int $shopID
+     * 
+     * @return object
+     */
+    public function getProductColorOption(int $productID, int $shopID) : object {
+        try{
+            $detailsInfo = Products::where('prod_id', $productID)->where('sch_id', $shopID)->first();
+            
+            if (!$detailsInfo) {
+                return response()->json(["data"=>"No Result Found.", "status"=>404], 404);
+            }
+
+            $allOptionProducts = Products::select('prod_id', 'products.color_family_id', 'code', 'color_name')
+                                ->where('product_code', $detailsInfo->product_code)
+                                ->where('sch_id', $shopID)
+                                ->join('color_family', 'color_family.color_family_id', '=', 'products.color_family_id')
+                                ->get();
+            $data = array();
+            foreach($allOptionProducts as $key => $val) {
+                if ($val['color_family_id'] != null) {
+                    $data[$key] = $val;
+                }
+            }
+
+            if (count($data) > 0) {
+                return response()->json(["data"=>$data, "status"=>200], 200);
+            } else {
+                return response()->json(["data"=>"No Result Found.", "status"=>404], 404);
+            }
+        } catch(Exception $e) {
+            return response()->json(["data"=>"An error occurred.", "status"=>500], 500);
+        }
+    }
+
+
 
     /**
      * Get Product Image by providing product ID
@@ -164,10 +265,10 @@ class ProductContoller extends Controller
                 $productImage = json_decode($detailsQuery->first()->picture);
                 return response()->json(["data"=>$productImage->{1}, "status"=>200], 200);
             }else {
-                return response()->json(["data"=>"no_image.jpg", "status"=>404], 200);
+                return response()->json(["data"=>"no_image.jpg", "status"=>404], 404);
             }
         }else {
-            return response()->json(["data"=>"no_image.jpg", "status"=>404], 200);
+            return response()->json(["data"=>"no_image.jpg", "status"=>404], 404);
         }
     }
 
@@ -274,7 +375,7 @@ class ProductContoller extends Controller
             }
             return response()->json(["data"=>$data, "status"=>200], 200);
         }else {
-            return response()->json(["data"=>"No Result Found.", "status"=>200], 200);
+            return response()->json(["data"=>"No Result Found.", "status"=>404], 404);
         }
     }
 
@@ -302,7 +403,7 @@ class ProductContoller extends Controller
         if ($shopList->count() > 0) {
             return response()->json(["data"=>$shopList->get(), "status"=>200], 200);
         }else {
-            return response()->json(["data"=>"No Result Found.", "status"=>200], 200);
+            return response()->json(["data"=>"No Result Found.", "status"=>404], 404);
         }
     }
     // Search API functions End
