@@ -105,6 +105,15 @@ https://api.amarbangla.com.bd/api/search/{limit?}
 https://api.amarbangla.com.bd/api/search/{limit?}/{orderType?}
 
 
+Example:<br>
+https://api.amarbangla.com.bd/api/search/
+
+post with the search key: search_item
+Normally search_item = any product name
+
+Note: if search_item == #4, it's means it will search shop which shop ID is 4
+
+
 
 Product details API
 ------------------------------------------------------------------
