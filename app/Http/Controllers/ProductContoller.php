@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Products;
+use Exception;
 
 class ProductContoller extends Controller
 {
@@ -95,7 +96,7 @@ class ProductContoller extends Controller
         }
     }
 
-    private function getDemoProductPicture(int $demoProductID) : string|null {
+    private function getDemoProductPicture(int $demoProductID) : string|null|array {
         $demoProduct = DB::table("demo_products")->select("*")
             ->where('id', $demoProductID)->first();
         return $demoProduct->picture;
@@ -234,22 +235,22 @@ class ProductContoller extends Controller
 
     /**
      * Product Search Function. It's a private function that is called by above functions.
-     * @param Int $key
+     * @param string $key
      * @param Int $limit
      * @param string $orderType
      * @return object
      */
-    private function searchProduct(Int $key, Int $limit=10, String $orderType='ASC') : object {
-        $productList = DB::table("products")->select("*")
+    private function searchProduct(String $key, Int $limit=10, String $orderType='ASC') : object {
+        $productList = DB::table("products")->select("*", 'products.name AS product_name')
             ->join('shops', 'products.sch_id', "=", "shops.sch_id")
             ->where('shops.opening_status', '1')
             ->where('shops.status', '1')
             ->where('products.status', '1')
             ->where("products.deleted", null)
             ->where("products.name", 'LIKE', "%{$key}%")
-            ->where("products.name", 'LIKE', "%{$key}%")
+            // ->where("products.name", 'LIKE', "%{$key}%")
             ->orWhere("products.prod_id", 'LIKE', "%{$key}%")
-            ->orWhere("products.prod_id", 'LIKE', "%{$key}%")
+            // ->orWhere("products.prod_id", 'LIKE', "%{$key}%")
             ->orWhere("products.description", 'LIKE', "%{$key}%")
             ->orderBy('products.prod_id', $orderType);
 
@@ -257,10 +258,24 @@ class ProductContoller extends Controller
             $productList->limit($limit);
         }
 
-        if ($productList->count() > 0) {
-            return response()->json(["data"=>$productList->get(), "status"=>200], 200);
+        $data = $productList->get();
+        if ($data->count() > 0) {
+            foreach($data as $key=>$value) {
+                
+                if ($value->demo_id == null){
+                    $data[$key]->product_image_path = "https://amarbangla.com.bd/uploads/product_image/";
+                }else{
+                    
+                    //update picture from demo product table if picture is null in product table
+                    if ($value->picture == null) {
+                        $data[$key]->picture = $this->getDemoProductPicture($value->demo_id);
+                    }
+                    $data[$key]->product_image_path = "https://amarbangla.com.bd/uploads/demo_product_image/";
+                }
+            }
+            return response()->json(["data"=>$data, "status"=>200], 200);
         }else {
-            return response()->json(["data"=>"No Result Found.", "status"=>404], 200);
+            return response()->json(["data"=>"No Result Found.", "status"=>200], 200);
         }
     }
 
@@ -288,7 +303,7 @@ class ProductContoller extends Controller
         if ($shopList->count() > 0) {
             return response()->json(["data"=>$shopList->get(), "status"=>200], 200);
         }else {
-            return response()->json(["data"=>"No Result Found.", "status"=>404], 200);
+            return response()->json(["data"=>"No Result Found.", "status"=>200], 200);
         }
     }
     // Search API functions End
