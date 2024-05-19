@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Products;
-use Exception;
 
 class ProductContoller extends Controller
 {
@@ -96,7 +95,7 @@ class ProductContoller extends Controller
         }
     }
 
-    private function getDemoProductPicture(int $demoProductID) : string|null|array {
+    private function getDemoProductPicture(int $demoProductID) : string|null {
         $demoProduct = DB::table("demo_products")->select("*")
             ->where('id', $demoProductID)->first();
         return $demoProduct->picture;
