@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CustomerAuthController;
 use \App\Http\Controllers\WebsiteSettingsController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -28,8 +29,6 @@ Route::get("get_website_settings/{label}", [WebsiteSettingsController::class, 'g
 
 Route::get("get_regular_shop_list/{limit?}/{orderBy?}/{orderType?}", [ShopController::class, 'getRegularShopsList']);
 Route::get("get_regular_shop_list_by_category/{shop_category}/{limit?}/{orderBy?}/{orderType?}", [ShopController::class, 'getRegularShopsListByCategory']);
-Route::get("get_local_shop_list/{limit?}/{orderBy?}/{orderType?}", [ShopController::class, 'getLocalShopsList']);
-Route::get("get_local_shop_list_by_category/{shop_category}/{limit?}/{orderBy?}/{orderType?}", [ShopController::class, 'getLocalShopsListByCategory']);
 Route::get("get_shop_details/{shopID}/", [ShopController::class, 'getShopDetails']);
 Route::get("get_shop_youtube_url/{shopID}/", [ShopController::class, 'getShopYoutubeURL']);
 Route::get("get_shop_settings_info/{shopID}/{label}/", [ShopController::class, 'getShopSettingsInfo']);
@@ -58,3 +57,19 @@ Route::get("get_all_shop_category/{limit?}/{orderType?}", [ShopCategoryControlle
 Route::post("search", [ProductContoller::class, 'searchItem']);
 Route::post("search/{limit?}", [ProductContoller::class, 'searchItemWithLimit']);
 Route::post("search/{limit?}/{orderType?}", [ProductContoller::class, 'searchItemWithLimitAndOrderType']);
+
+
+
+// login and registration
+Route::post("customer_register", [CustomerAuthController::class, 'register']);
+Route::post("customer_login", [CustomerAuthController::class, 'login']);
+
+// Route::middleware('auth:sanctum')->get('local_shop/{global_address_id?}', [ShopController::class, 'getLocalShopList']);
+
+
+// Local Shops
+Route::middleware('auth:sanctum')->group(function(){
+    Route::get("get_all_local_shop_list/{limit?}/{orderBy?}/{orderType?}", [ShopController::class, 'getAllLocalShopsList']);
+    Route::get("get_local_shop_list_by_category/{shop_category}/{limit?}/{orderBy?}/{orderType?}", [ShopController::class, 'getLocalShopsListByCategory']);
+    Route::get("get_local_shops_list/{global_address_id}/{limit?}/{orderBy?}/{orderType?}", [ShopController::class, 'getLocalShopList']);
+});
