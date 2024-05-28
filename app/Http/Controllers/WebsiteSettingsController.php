@@ -11,6 +11,8 @@ class WebsiteSettingsController extends Controller
 {
     protected string $imagePath = "/var/www/amarbangla.dn/public_html/uploads/website_image/";
 
+
+    
     /**
      * @return JsonResponse
      */
@@ -24,6 +26,13 @@ class WebsiteSettingsController extends Controller
         return response()->json(["data" => $data, "path" => $path, "status"=>200], 200);
     }
 
+
+
+    /**
+     * @param string $label
+     * 
+     * @return object
+     */
     public function getWebsiteSettings(string $label) : object {
         $query = WebsiteSettings::where('label', $label);
         if ($query->count() > 0) {

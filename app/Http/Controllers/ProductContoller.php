@@ -22,6 +22,15 @@ class ProductContoller extends Controller
 //        dd($query);
 //    }
 
+
+
+    /**
+     * @param Int $offset=0
+     * @param Int $limit=0
+     * @param string $orderType='ASC'
+     * 
+     * @return object
+     */
     public function getPopularProductList(Int $offset=0, Int $limit=0, string $orderType='ASC') : object {
         $shopList = DB::table("products")->select("*")
             ->join('product_features', 'product_features.prod_id', "=", "products.prod_id")
@@ -58,6 +67,13 @@ class ProductContoller extends Controller
         }
     }
 
+    /**
+     * @param Int $offset=0
+     * @param Int|null $limit=0
+     * @param string $orderType='ASC'
+     * 
+     * @return object
+     */
     public function getHotProductList(Int $offset=0, ?Int $limit=0, string $orderType='ASC') : object {
         $shopList = DB::table("products")->select("*", "products.name as name", "shops.name as shop_name")
             ->join('product_features', 'product_features.prod_id', "=", "products.prod_id")
@@ -103,6 +119,13 @@ class ProductContoller extends Controller
     }
 
 
+    /**
+     * @param Int|null $offset=0
+     * @param Int|null $limit=0
+     * @param string $orderType='ASC'
+     * 
+     * @return object
+     */
     public function getFeaturedProductList(?Int $offset=0, ?Int $limit=0, string $orderType='ASC') : object {
         
         // Enable query logging
@@ -144,6 +167,12 @@ class ProductContoller extends Controller
         }
     }
 
+    /**
+     * @param int $productID
+     * @param int $shopID
+     * 
+     * @return object
+     */
     public function getProductDetails(int $productID, int $shopID) : object {
         $detailsQuery = Products::where('prod_id', $productID)->where('sch_id', $shopID);
         if ($detailsQuery->get()->count() > 0) {
@@ -180,6 +209,15 @@ class ProductContoller extends Controller
     // }
 
 
+
+
+
+    /**
+     * @param int $productID
+     * @param int $shopID
+     * 
+     * @return object
+     */
     public function getProductSizeOption(int $productID, int $shopID) : object {
         try {
             $detailsInfo = Products::where('prod_id', $productID)->where('sch_id', $shopID)->first();

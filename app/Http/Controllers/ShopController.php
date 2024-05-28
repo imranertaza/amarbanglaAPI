@@ -132,6 +132,13 @@ class ShopController extends Controller
     }
 
 
+
+    
+    /**
+     * @param Int $shopID
+     * 
+     * @return object
+     */
     public function getShopDetails(Int $shopID):object{
         $shopInfo = Shops::where("sch_id", $shopID);
         if ($shopInfo->count() > 0) {
@@ -142,6 +149,14 @@ class ShopController extends Controller
     }
 
 
+
+
+    /**
+     * @param Int $shopID
+     * @param String $label
+     * 
+     * @return object
+     */
     public function getShopSettingsInfo(Int $shopID, String $label):object{
         $shopInfo = GeneralSettings::select("value")
             ->where("sch_id", $shopID)
@@ -153,6 +168,14 @@ class ShopController extends Controller
         }
     }
 
+
+
+    
+    /**
+     * @param Int $shopID
+     * 
+     * @return object
+     */
     public function getShopYoutubeURL(Int $shopID):object{
         $shopInfo = GeneralSettings::select("value")
             ->where("sch_id", $shopID)
@@ -165,6 +188,14 @@ class ShopController extends Controller
     }
 
 
+    /**
+     * @param Int $global_address_id
+     * @param Int|null $limit=0
+     * @param string|null $orderBy=null
+     * @param string $orderType='ASC'
+     * 
+     * @return object
+     */
     public function getLocalShopList(Int $global_address_id, ?Int $limit=0, ?string $orderBy=null, string $orderType='ASC') : object {
         
         $shop_list = Shops::select("sch_id as ShopID", "name as ShopName", "image")
