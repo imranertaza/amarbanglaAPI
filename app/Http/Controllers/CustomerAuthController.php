@@ -10,6 +10,11 @@ use Illuminate\Support\Facades\Validator;
 
 class CustomerAuthController extends Controller
 {
+    /**
+     * @param Request $request
+     * 
+     * @return object
+     */
     public function register(Request $request) : object{
         // Manually validate the request
         $validator = Validator::make($request->all(), [
@@ -64,6 +69,11 @@ class CustomerAuthController extends Controller
     }
 
 
+    /**
+     * @param Request $request
+     * 
+     * @return object
+     */
     public function login(Request $request) : object{
         {
             $request->validate([

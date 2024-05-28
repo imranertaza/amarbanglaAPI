@@ -261,3 +261,29 @@ https://api.amarbangla.com.bd/api/customer_login/
 
 <br><br><br>
 
+
+
+Global Address
+------------------------------------------------
+Get all divisions list
+<br>
+Method GET 
+URL: https://api.amarbangla.com.bd/api/get_all_divisions/
+
+Example:<br>
+https://api.amarbangla.com.bd/api/get_all_divisions/
+
+
+<br><br>
+
+
+Get all district list by Division ID
+<br>
+Method GET 
+URL: https://api.amarbangla.com.bd/api/get_districts_by_division/{division}/{limit?}/{orderBy?}/{orderType?}
+
+Example:<br>
+https://api.amarbangla.com.bd/api/get_districts_by_division/2/5/global_address_id/DESC/
+
+<br><br><br>
+

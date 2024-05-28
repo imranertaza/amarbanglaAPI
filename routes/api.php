@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CustomerAuthController;
+use App\Http\Controllers\GlobalAddressController;
 use \App\Http\Controllers\WebsiteSettingsController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -73,3 +74,9 @@ Route::middleware('auth:sanctum')->group(function(){
     Route::get("get_local_shop_list_by_category/{shop_category}/{limit?}/{orderBy?}/{orderType?}", [ShopController::class, 'getLocalShopsListByCategory']);
     Route::get("get_local_shops_list/{global_address_id}/{limit?}/{orderBy?}/{orderType?}", [ShopController::class, 'getLocalShopList']);
 });
+
+
+
+// Global Address
+Route::get("get_all_divisions", [GlobalAddressController::class, 'getAllDivisionList']);
+Route::get("get_districts_by_division/{division}/{limit?}/{orderBy?}/{orderType?}", [GlobalAddressController::class, 'getDistrictsByDivisionID']);
