@@ -79,4 +79,8 @@ Route::middleware('auth:sanctum')->group(function(){
 
 // Global Address
 Route::get("get_all_divisions", [GlobalAddressController::class, 'getAllDivisionList']);
+Route::get("get_districts_list_by_division/{division}", [GlobalAddressController::class, 'getDistrictsListByDivisionID']);
+
+
+// unused yet
 Route::get("get_districts_by_division/{division}/{limit?}/{orderBy?}/{orderType?}", [GlobalAddressController::class, 'getDistrictsByDivisionID']);

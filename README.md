@@ -280,6 +280,16 @@ https://api.amarbangla.com.bd/api/get_all_divisions/
 Get all district list by Division ID
 <br>
 Method GET 
+URL: https://api.amarbangla.com.bd/api/get_districts_list_by_division/{division}
+
+Example:<br>
+https://api.amarbangla.com.bd/api/get_districts_list_by_division/2/
+
+<br><br><br>
+
+Get all district list by Division ID
+<br>
+Method GET 
 URL: https://api.amarbangla.com.bd/api/get_districts_by_division/{division}/{limit?}/{orderBy?}/{orderType?}
 
 Example:<br>
