@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\global_address;
+use Illuminate\Http\JsonResponse;
 
 class GlobalAddressController extends Controller
 {
@@ -104,6 +105,34 @@ class GlobalAddressController extends Controller
 
 
 
+
+    /**
+     * This function provide the districts name from the given division ID
+     * 
+     * @param $division
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function getDistrictsListByDivisionID(Int $division) : JsonResponse {
+
+        // Initialize an empty array to store districts of division_id 2
+        $division2_districts = array();
+
+        // Iterate through $districts array to filter districts with division_id 2
+        foreach ($this->district_list as $district) {
+            if ($district['division_id'] == $division) {
+                $division2_districts[] = ['id'=>$district['id'], 'name' => $district['name']];
+            }
+        }
+
+        if (!empty($division2_districts)) {
+            return response()->json(["data" => $division2_districts, "status" => 200], 200);
+        }else {
+            return response()->json(["data" => "No District found", "status" => 404], 404);
+        }
+    }
+
+
+
     /**
      * Retrieve districts based on the division ID.
      *
@@ -118,7 +147,7 @@ class GlobalAddressController extends Controller
 
         $division_list = global_address::select("*")
             ->where("division", $division)
-            ->where("deleted", null);
+            ->where("deleted", null)->groupBy('division');
 
         if ($limit !== 0){
             $division_list = $division_list->limit($limit);
@@ -150,7 +179,7 @@ class GlobalAddressController extends Controller
             foreach ($this->district_list as $district) {
                 foreach ($district as $key=>$value){
                     if (($value == $districtID) && ($key == 'id')) {
-                        $element->district_name = $district['name'];
+                        $element->name = $district['name'];
                     }
                 }
             }
