@@ -84,3 +84,4 @@ Route::get("get_districts_list_by_division/{division}", [GlobalAddressController
 
 // unused yet
 Route::get("get_districts_by_division/{division}/{limit?}/{orderBy?}/{orderType?}", [GlobalAddressController::class, 'getDistrictsByDivisionID']);
+

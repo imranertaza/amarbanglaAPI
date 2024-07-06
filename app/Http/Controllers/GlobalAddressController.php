@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\global_address;
-use stdClass;
 use Illuminate\Http\JsonResponse;
 
 class GlobalAddressController extends Controller

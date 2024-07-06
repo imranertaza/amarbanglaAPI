@@ -215,7 +215,7 @@ https://api.amarbangla.com.bd/api/get_all_shop_category/2/DESC
 Registration
 ------------------------------------------------
 Method POST 
-URL: https://api.amarbangla.com.bd/api/customer_register/
+URL: https://api.amarbangla.com.bd/api/customer_register
 
 Fields keys: [
                 'mobile'
@@ -239,7 +239,7 @@ Fields keys: [
             ]
 
 Example:<br>
-https://api.amarbangla.com.bd/api/customer_register/
+https://api.amarbangla.com.bd/api/customer_register
 
 <br><br><br>
 
@@ -248,7 +248,7 @@ https://api.amarbangla.com.bd/api/customer_register/
 Login
 ------------------------------------------------
 Method POST 
-URL: https://api.amarbangla.com.bd/api/customer_login/
+URL: https://api.amarbangla.com.bd/api/customer_login
 
 Fields keys: [
                 'mobile'
@@ -256,7 +256,7 @@ Fields keys: [
             ]
 
 Example:<br>
-https://api.amarbangla.com.bd/api/customer_login/
+https://api.amarbangla.com.bd/api/customer_login
 
 
 <br><br><br>
