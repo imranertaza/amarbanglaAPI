@@ -287,6 +287,30 @@ https://api.amarbangla.com.bd/api/get_districts_list_by_division/2/
 
 <br><br><br>
 
+Method GET
+URL: https://api.amarbangla.com.bd/get_sub_districts_list_by_district/{districtID}
+
+Example:<br>
+https://api.amarbangla.com.bd/api/get_sub_districts_list_by_district/2/
+
+<br><br><br>
+
+Method GET
+URL: https://api.amarbangla.com.bd/api/get_pourashava_or_union/
+
+Example:<br>
+https://api.amarbangla.com.bd/api/get_pourashava_or_union/
+
+<br><br><br>
+
+Method GET
+URL: https://api.amarbangla.com.bd/api/get_ward/
+
+Example:<br>
+https://api.amarbangla.com.bd/api/get_ward/
+
+<br><br><br>
+
 Get all district list by Division ID
 <br>
 Method GET 
