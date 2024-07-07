@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\global_address;
 use Illuminate\Http\JsonResponse;
 
@@ -89,7 +88,7 @@ class GlobalAddressController extends Controller
     );
 
 
-private array $upazilas = array(
+private array $subdistrict = array(
                                 array('id' => '1','district_id' => '1','name' => 'Debidwar','bn_name' => 'দেবিদ্বার','url' => 'debidwar.comilla.gov.bd'),
                                 array('id' => '2','district_id' => '1','name' => 'Barura','bn_name' => 'বরুড়া','url' => 'barura.comilla.gov.bd'),
                                 array('id' => '3','district_id' => '1','name' => 'Brahmanpara','bn_name' => 'ব্রাহ্মণপাড়া','url' => 'brahmanpara.comilla.gov.bd'),
@@ -668,11 +667,11 @@ private array $upazilas = array(
     /**
      * @description Retrieve a list of all divisions.
      *
-     * @return \Illuminate\Http\JsonResponse A JSON response containing the list of divisions and status code.
+     * @return JsonResponse A JSON response containing the list of divisions and status code.
      */
     public function getAllDivisionList() : object {
         if (!empty($this->divisions)) {
-            return response()->json(["data" => $this->divisions, "status" => 200], 200);
+            return response()->json(["data" => $this->divisions, "status" => 200],200);
         }else {
             return response()->json(["data" => "No Division found", "status" => 404], 404);
         }
@@ -684,25 +683,90 @@ private array $upazilas = array(
     /**
      * This function provide the districts name from the given division ID
      *
-     * @param $division
-     * @return \Illuminate\Http\JsonResponse
+     * @param Int $divisionID
+     * @return JsonResponse
      */
-    public function getDistrictsListByDivisionID(Int $division) : JsonResponse {
+    public function getDistrictsListByDivisionID(Int $divisionID) : JsonResponse {
 
         // Initialize an empty array to store districts of division_id 2
         $division2_districts = array();
 
         // Iterate through $districts array to filter districts with division_id 2
         foreach ($this->district_list as $district) {
-            if ($district['division_id'] == $division) {
+            if ($district['division_id'] == $divisionID) {
                 $division2_districts[] = ['id'=>$district['id'], 'name' => $district['name']];
             }
         }
 
         if (!empty($division2_districts)) {
-            return response()->json(["data" => $division2_districts, "status" => 200], 200);
+            return response()->json(["data" => $division2_districts, "status" => 200],200);
         }else {
             return response()->json(["data" => "No District found", "status" => 404], 404);
+        }
+    }
+
+
+
+    /**
+     * This function provide the sub districts name from the given District ID
+     *
+     * @param Int $districtID
+     * @return JsonResponse
+     */
+    public function getSubdistrictsListByDistrictID(Int $districtID) : JsonResponse {
+
+        // Initialize an empty array to store districts of division_id 2
+        $district2_subDistricts = array();
+
+        // Iterate through $districts array to filter districts with division_id 2
+        foreach ($this->subdistrict as $subDistrict) {
+            if ($subDistrict['district_id'] == $districtID) {
+                $district2_subDistricts[] = ['id'=>$subDistrict['id'], 'name' => $subDistrict['name']];
+            }
+        }
+
+        if (!empty($district2_subDistricts)) {
+            return response()->json(["data" => $district2_subDistricts, "status" => 200]);
+        }else {
+            return response()->json(["data" => "No Sub District found", "status" => 404], 404);
+        }
+    }
+
+
+
+    /**
+     * This function provide the pourashova or union name
+     *
+     * @return JsonResponse
+     */
+    public function getPourashovaUnion() : JsonResponse {
+        $data = array();
+        foreach ($this->pourashova_Union as $key=>$pourashovaUnion) {
+            $data[] = ['id' => $key, 'name'=>$pourashovaUnion];
+        }
+        if (!empty($data)) {
+            return response()->json(["data" => $data, "status" => 200]);
+        }else {
+            return response()->json(["data" => "No Pourashova or Union found", "status" => 404], 404);
+        }
+    }
+
+
+
+    /**
+     * This function provide the list of Wards
+     *
+     * @return JsonResponse
+     */
+    public function getWards() : JsonResponse {
+        $data = array();
+        foreach ($this->ward as $key=>$ward) {
+            $data[] = ['id' => $key, 'name'=>$ward];
+        }
+        if (!empty($data)) {
+            return response()->json(["data" => $data, "status" => 200]);
+        }else {
+            return response()->json(["data" => "No Ward found", "status" => 404], 404);
         }
     }
 
@@ -716,7 +780,7 @@ private array $upazilas = array(
      * @param string $orderBy (optional) The column to order the results by. Default is 'global_address_id'.
      * @param string $orderType (optional) The order type ('ASC' for ascending, 'DESC' for descending). Default is 'ASC'.
      *
-     * @return \Illuminate\Http\JsonResponse A JSON response containing the retrieved districts and status code.
+     * @return JsonResponse A JSON response containing the retrieved districts and status code.
      */
     public function getDistrictsByDivisionID(Int $division, Int $limit=0, string $orderBy='global_address_id', string $orderType='ASC') : object {
 
@@ -737,7 +801,7 @@ private array $upazilas = array(
         $result = json_decode($division_list->get());
         $data = $this->add_district_name($result);
         if ($totalRows > 0) {
-            return response()->json(["data" => $data, "status" => 200], 200);
+            return response()->json(["data" => $data, "status" => 200]);
         }else {
             return response()->json(["data" => "No District found", "status" => 404], 404);
         }

@@ -79,7 +79,10 @@ Route::middleware('auth:sanctum')->group(function(){
 
 // Global Address
 Route::get("get_all_divisions", [GlobalAddressController::class, 'getAllDivisionList']);
-Route::get("get_districts_list_by_division/{division}", [GlobalAddressController::class, 'getDistrictsListByDivisionID']);
+Route::get("get_districts_list_by_division/{divisionID}", [GlobalAddressController::class, 'getDistrictsListByDivisionID']);
+Route::get("get_sub_districts_list_by_district/{districtID}", [GlobalAddressController::class, 'getSubdistrictsListByDistrictID']);
+Route::get("get_pourashava_or_union", [GlobalAddressController::class, 'getPourashovaUnion']);
+Route::get("get_ward", [GlobalAddressController::class, 'getWards']);
 
 
 // unused yet
