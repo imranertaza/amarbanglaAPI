@@ -73,6 +73,7 @@ Route::middleware('auth:sanctum')->group(function(){
     Route::get("get_all_local_shop_list/{limit?}/{orderBy?}/{orderType?}", [ShopController::class, 'getAllLocalShopsList']);
     Route::get("get_local_shop_list_by_category/{shop_category}/{limit?}/{orderBy?}/{orderType?}", [ShopController::class, 'getLocalShopsListByCategory']);
     Route::get("get_local_shops_list/{global_address_id}/{limit?}/{orderBy?}/{orderType?}", [ShopController::class, 'getLocalShopList']);
+    Route::get("get_local_shop_detail/{shop_id}", [ShopController::class, 'getLocalShopDetails']);
 });
 
 
