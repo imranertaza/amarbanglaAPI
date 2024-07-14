@@ -64,7 +64,7 @@ https://api.amarbangla.com.bd/api/get_local_shops_list/1/3/shopID/desc
 <br><br><br>
 
 
-https://api.amarbangla.com.bd/api/get_local_shop_detail/{shopID?}
+https://api.amarbangla.com.bd/api/get_local_shop_detail/{shopID}
 
 Example:<br>
 https://api.amarbangla.com.bd/api/get_local_shop_detail/2/
