@@ -243,10 +243,12 @@ class ShopController extends Controller
                 $shop_details[0][$result->label] = $result->value;
             }
 
-            $in = new ImagePath(shopID:$shopID);
-            $shop_details[0]->image = $in->profile_image_path;
-            $shop_details[0]->logo = $in->logo_path;
-            $shop_details[0]->banner = $in->banner_path;
+            $imagePath = new ImagePath(shopID:$shopID);
+            $shop_details[0]->image = $imagePath->profile_image_path;
+            $shop_details[0]->logo = $imagePath->logo_path;
+            $shop_details[0]->banner = $imagePath->banner_path;
+            $shop_details[0]->customer_panel_banner = $imagePath->customer_panel_banner;
+            $shop_details[0]->customer_panel_banner_mobile = $imagePath->customer_panel_banner_mobile;
 
         }
 
