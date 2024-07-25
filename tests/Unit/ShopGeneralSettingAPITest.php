@@ -57,7 +57,7 @@ class ShopGeneralSettingAPITest extends TestCase
     public function testGetShopYoutubeURLWithURLWithParameterZero(): void
     {
         $this->get("get_shop_youtube_url/0")
-            ->assertStatus(200);
+            ->assertStatus(404);
     }
 
 

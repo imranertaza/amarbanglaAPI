@@ -3,11 +3,11 @@
 use App\Http\Controllers\CustomerAuthController;
 use App\Http\Controllers\GlobalAddressController;
 use \App\Http\Controllers\WebsiteSettingsController;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\ShopController;
 use \App\Http\Controllers\ProductContoller;
 use App\Http\Controllers\ShopCategoryController;
+use \App\Http\Controllers\OrderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -64,6 +64,7 @@ Route::post("search/{limit?}/{orderType?}", [ProductContoller::class, 'searchIte
 // login and registration
 Route::post("customer_register", [CustomerAuthController::class, 'register']);
 Route::post("customer_login", [CustomerAuthController::class, 'login']);
+Route::post("order/create", [OrderController::class, 'create']);
 
 // Route::middleware('auth:sanctum')->get('local_shop/{global_address_id?}', [ShopController::class, 'getLocalShopList']);
 

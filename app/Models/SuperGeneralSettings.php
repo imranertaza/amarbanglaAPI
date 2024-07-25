@@ -5,12 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class GeneralSettings extends Model
+class SuperGeneralSettings extends Model
 {
     use HasFactory;
-    protected $table = "gen_settings";
+    protected $table = "gen_settings_super";
 
     public static function getSettingItem($item, $shopID){
-        return self::select('value')->where("sch_id", $shopID)->where("label", $item)->first();
+        return self::select('value')->where("label", $item)->first();
     }
 }

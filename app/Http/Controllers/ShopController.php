@@ -142,11 +142,16 @@ class ShopController extends Controller
      * @return JsonResponse
      */
     public function getShopDetails(Int $shopID):JsonResponse{
-        $shopInfo = Shops::where("sch_id", $shopID);
+        $shopInfo = Shops::where("sch_id", $shopID)
+            ->where('shops.priority', '1')
+            ->where("shops.status", '1')
+            ->whereNull("shops.deleted")
+            ->where("shops.status", '1')
+            ->where("shops.opening_status", '1');
         if ($shopInfo->count() > 0) {
             return response()->json(["data"=>$shopInfo->get(), "status"=>200], 200);
         }else {
-            return response()->json(["data"=>"No Result Found.", "status"=>404], 200);
+            return response()->json(["data"=>"No Result Found.", "status"=>404], 404);
         }
     }
 
