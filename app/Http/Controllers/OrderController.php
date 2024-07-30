@@ -10,6 +10,7 @@ use App\Models\Invoice;
 use App\Models\Products;
 use App\Models\Package;
 use App\Models\Shops;
+use APP\Libraries\BulkSMSBD;
 
 class OrderController extends Controller
 {
@@ -92,6 +93,14 @@ class OrderController extends Controller
                         'delivery_charge' => $deliveryCharge->value
                     ));
 
+//                    $mobile = get_data_by_id('mobile','shops','sch_id',$schId);
+                    $mobileInfo = Shops::select("mobile")->where("sch_id", $shopID)->first();
+                    if (!empty($mobileInfo->mobile)) {
+                        $adminMess = 'New order from AmarBangla Invoice id: ' . $packdata->package_id;
+                        $BulkSMSbd = new BulkSMSBD();
+                        $BulkSMSbd->send_sms($mobileInfo->mobile, $adminMess);
+                    }
+
 
                 }else {
 
@@ -101,7 +110,7 @@ class OrderController extends Controller
         }
 
         if ($global_address->count() > 0) {
-            return response()->json(["data"=>$packdata, "status"=>200], 200);
+            return response()->json(["data"=>$mobileInfo->mobile, "status"=>200], 200);
         }else {
             return response()->json(["data"=>"No Result Found.", "status"=>404], 404);
         }
