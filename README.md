@@ -38,8 +38,8 @@ https://api.amarbangla.com.bd/api/get_shop_settings_info/8/customer_panel_video
 
 
 
-API for Local shops list
-------------------------------------
+API for Local shops list (Required Login token to access this API)
+----------------------------------------------------------------------
 https://api.amarbangla.com.bd/api/get_all_local_shop_list/{limit?}/{orderBy?}/{orderType?}
 
 Example:<br>
