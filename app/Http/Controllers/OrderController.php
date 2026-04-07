@@ -14,7 +14,55 @@ use APP\Libraries\BulkSMSBD;
 
 class OrderController extends Controller
 {
-    public function create(Request $request){
+    /**
+     * Create a new invoice and package order
+     *
+     * This endpoint creates a new invoice and associated package(s) for a customer order.
+     * It validates the cart items, resolves delivery charges based on shop type and settings,
+     * and sends SMS notifications to shop owners when a new order is placed.
+     *
+     * @bodyParam userId int required The ID of the user creating the order.
+     * @bodyParam shopId_cus int required The customer’s shop ID.
+     * @bodyParam customer_id int required The customer ID placing the order.
+     * @bodyParam productId array required The list of product IDs in the order.
+     * @bodyParam qty array required The quantities for each product.
+     * @bodyParam price float required The price of each product.
+     * @bodyParam subtotal array required The subtotal for each product.
+     * @bodyParam suballtotal float required The subtotal of all products combined.
+     * @bodyParam fast_delivery boolean optional Whether fast delivery is requested.
+     * @bodyParam grandtotal2 float required The total amount before final adjustments.
+     * @bodyParam grandtotal float required The final payable amount.
+     * @bodyParam grandtotaldue float required The due amount after payment.
+     * @bodyParam division string required The division of the delivery address.
+     * @bodyParam district string required The district of the delivery address.
+     * @bodyParam sub_district string required The sub-district of the delivery address.
+     * @bodyParam union_pourashava string required The union/pourashava of the delivery address.
+     * @bodyParam ward string required The ward of the delivery address.
+     * @bodyParam address string required The full delivery address.
+     *
+     * @response 200 {
+     *   "data": "017XXXXXXXX",
+     *   "status": 200
+     * }
+     *
+     * @response 404 {
+     *   "data": "Your Cart Is Empty !!",
+     *   "status": 404
+     * }
+     *
+     * @response 404 {
+     *   "data": "No Result Found.",
+     *   "status": 404
+     * }
+     *
+     * @param Request $request The request object containing order and customer details.
+     *
+     * @return JsonResponse A JSON response containing either the shop’s mobile number (200),
+     *                      or an error message if the cart is empty or address not found (404).
+     */
+
+    public function create(Request $request)
+    {
         $userId = $request->post('userId');
         $shopId_cus = $request->post('shopId_cus');
         $customer_id = $request->post('customer_id');
@@ -29,16 +77,16 @@ class OrderController extends Controller
         $dueAmount = $request->post('grandtotaldue');
         $division = $request->post('division');
         $district = $request->post('district');
-        $sub_district= $request->post('sub_district');
+        $sub_district = $request->post('sub_district');
         $union_pourashava = $request->post('union_pourashava');
         $ward = $request->post('ward');
         $address = $request->post('address');
 
         if (empty($proId)) {
-            return response()->json(["data"=>"Your Cart Is Empty !!", "status"=>404], 404);
+            return response()->json(["data" => "Your Cart Is Empty !!", "status" => 404], 404);
         }
 
-        $global_address = global_address::select("*")->where(array('division' => $division,'zila' => $district,'upazila' => $sub_district,'pourashava' => $union_pourashava,'ward' => $ward));
+        $global_address = global_address::select("*")->where(array('division' => $division, 'zila' => $district, 'upazila' => $sub_district, 'pourashava' => $union_pourashava, 'ward' => $ward));
 
 
         if ($global_address->count() == 1) {
@@ -46,7 +94,7 @@ class OrderController extends Controller
             //create invoice in invoice table (start)
             $invoice = Invoice::create([
                 'amount' => $amount,
-                'final_amount' =>$finalAmount,
+                'final_amount' => $finalAmount,
                 'due' => $dueAmount,
                 'status' => "2",
                 'createdBy' => $userId,
@@ -59,26 +107,26 @@ class OrderController extends Controller
             //create invoice in invoice table (End)
 
 
-            for($i = 0; $i < count($proId); $i++) {
+            for ($i = 0; $i < count($proId); $i++) {
                 $shopID = Products::getShopIDByProductID($proId);
 
-                $package = Package::isPackageExist($invoice['invoice_id'],$shopID);
+                $package = Package::isPackageExist($invoice['invoice_id'], $shopID);
 
                 if ($package == false) {
                     $checkShopType = Shops::select('priority')->where('sch_id', $shopID)->first();
 
-                    if ($checkShopType->priority == 1){
+                    if ($checkShopType->priority == 1) {
                         $deliveryCharge = GeneralSettings::select('value')->where("sch_id", $shopID)->where("label", 'regular_shop_delivery_charge')->first();
                         if (empty($deliveryCharge)) {
                             $deliveryCharge = SuperGeneralSettings::select('value')->where("label", 'regular_shop_delivery_charge')->first();
                         }
-                    }else{
+                    } else {
                         $deliveryCharge = GeneralSettings::select('value')->where("sch_id", $shopID)->where("label", 'express_shop_delivery_charge')->first();
-                        if (empty($fastDelivery)){
-                            if (empty($deliveryCharge)){
+                        if (empty($fastDelivery)) {
+                            if (empty($deliveryCharge)) {
                                 $deliveryCharge = SuperGeneralSettings::select('value')->where("label", 'express_shop_delivery_charge')->first();
                             }
-                        }else {
+                        } else {
                             $deliveryCharge = GeneralSettings::select('value')->where("sch_id", $shopID)->where("label", 'express_shop_fast_delivery_charge')->first();
                             if (empty($deliveryCharge)) {
                                 $deliveryCharge = SuperGeneralSettings::select('value')->where("label", 'express_shop_fast_delivery_charge')->first();
@@ -93,27 +141,22 @@ class OrderController extends Controller
                         'delivery_charge' => $deliveryCharge->value
                     ));
 
-//                    $mobile = get_data_by_id('mobile','shops','sch_id',$schId);
+                    //                    $mobile = get_data_by_id('mobile','shops','sch_id',$schId);
                     $mobileInfo = Shops::select("mobile")->where("sch_id", $shopID)->first();
                     if (!empty($mobileInfo->mobile)) {
                         $adminMess = 'New order from AmarBangla Invoice id: ' . $packdata->package_id;
                         $BulkSMSbd = new BulkSMSBD();
                         $BulkSMSbd->send_sms($mobileInfo->mobile, $adminMess);
                     }
-
-
-                }else {
-
+                } else {
                 }
             }
-
         }
 
         if ($global_address->count() > 0) {
-            return response()->json(["data"=>$mobileInfo->mobile, "status"=>200], 200);
-        }else {
-            return response()->json(["data"=>"No Result Found.", "status"=>404], 404);
+            return response()->json(["data" => $mobileInfo->mobile, "status" => 200], 200);
+        } else {
+            return response()->json(["data" => "No Result Found.", "status" => 404], 404);
         }
-
     }
 }

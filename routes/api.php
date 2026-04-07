@@ -5,7 +5,7 @@ use App\Http\Controllers\GlobalAddressController;
 use \App\Http\Controllers\WebsiteSettingsController;
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\ShopController;
-use \App\Http\Controllers\ProductContoller;
+use \App\Http\Controllers\ProductController;
 use App\Http\Controllers\ShopCategoryController;
 use \App\Http\Controllers\OrderController;
 
@@ -33,19 +33,19 @@ Route::get("get_regular_shop_list_by_category/{shop_category}/{limit?}/{orderBy?
 Route::get("get_shop_details/{shopID}/", [ShopController::class, 'getShopDetails']);
 Route::get("get_shop_youtube_url/{shopID}/", [ShopController::class, 'getShopYoutubeURL']);
 Route::get("get_shop_settings_info/{shopID}/{label}/", [ShopController::class, 'getShopSettingsInfo']);
-//Route::get("get_all_products", [ProductContoller::class, 'getPriorityProductList']);
+//Route::get("get_all_products", [ProductController::class, 'getPriorityProductList']);
 
 
-Route::get("get_popular_products/{offset?}/{limit?}/{orderType?}", [ProductContoller::class, 'getPopularProductList']);
-Route::get("get_hot_products/{offset?}/{limit?}/{orderType?}", [ProductContoller::class, 'getHotProductList']);
-Route::get("get_featured_products/{offset?}/{limit?}/{orderType?}", [ProductContoller::class, 'getFeaturedProductList']);
-Route::get("get_products_details/{productID}/{shopID}", [ProductContoller::class, 'getProductDetails']);
-Route::get("get_products_image/{productID}/", [ProductContoller::class, 'getProductImage']);
+Route::get("get_popular_products/{offset?}/{limit?}/{orderType?}", [ProductController::class, 'getPopularProductList']);
+Route::get("get_hot_products/{offset?}/{limit?}/{orderType?}", [ProductController::class, 'getHotProductList']);
+Route::get("get_featured_products/{offset?}/{limit?}/{orderType?}", [ProductController::class, 'getFeaturedProductList']);
+Route::get("get_products_details/{productID}/{shopID}", [ProductController::class, 'getProductDetails']);
+Route::get("get_products_image/{productID}/", [ProductController::class, 'getProductImage']);
 
 
 // Product option API
-Route::get("get_products_size_option/{productID}/{shopID}", [ProductContoller::class, 'getProductSizeOption']);
-Route::get("get_products_color_option/{productID}/{shopID}", [ProductContoller::class, 'getProductColorOption']);
+Route::get("get_products_size_option/{productID}/{shopID}", [ProductController::class, 'getProductSizeOption']);
+Route::get("get_products_color_option/{productID}/{shopID}", [ProductController::class, 'getProductColorOption']);
 
 
 
@@ -55,9 +55,9 @@ Route::get("get_all_shop_category/{limit?}/{orderType?}", [ShopCategoryControlle
 
 
 // Search API
-Route::post("search", [ProductContoller::class, 'searchItem']);
-Route::post("search/{limit?}", [ProductContoller::class, 'searchItemWithLimit']);
-Route::post("search/{limit?}/{orderType?}", [ProductContoller::class, 'searchItemWithLimitAndOrderType']);
+Route::post("search", [ProductController::class, 'searchItem']);
+Route::post("search/{limit?}", [ProductController::class, 'searchItemWithLimit']);
+Route::post("search/{limit?}/{orderType?}", [ProductController::class, 'searchItemWithLimitAndOrderType']);
 
 
 
@@ -70,13 +70,12 @@ Route::post("order/create", [OrderController::class, 'create']);
 
 
 // Local Shops
-Route::middleware('auth:sanctum')->group(function(){
+Route::middleware('auth:sanctum')->group(function () {
     Route::get("get_all_local_shop_list/{limit?}/{orderBy?}/{orderType?}", [ShopController::class, 'getAllLocalShopsList']);
     Route::get("get_local_shop_list_by_category/{shop_category}/{limit?}/{orderBy?}/{orderType?}", [ShopController::class, 'getLocalShopsListByCategory']);
     Route::get("get_local_shops_list/{global_address_id}/{limit?}/{orderBy?}/{orderType?}", [ShopController::class, 'getLocalShopList']);
     Route::get("get_local_shop_detail/{shop_id}", [ShopController::class, 'getLocalShopDetails']);
 });
-
 
 
 // Global Address
@@ -89,4 +88,3 @@ Route::get("get_ward", [GlobalAddressController::class, 'getWards']);
 
 // unused yet
 Route::get("get_districts_by_division/{division}/{limit?}/{orderBy?}/{orderType?}", [GlobalAddressController::class, 'getDistrictsByDivisionID']);
-
