@@ -1,0 +1,3258 @@
+{
+  "info": {
+    "_postman_id": "4154974d-a6cc-4667-a516-8fb6fa33e0b7",
+    "name": "Amar Bangla Main",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "26620233",
+    "_collection_link": "https://go.postman.co/collection/26620233-4154974d-a6cc-4667-a516-8fb6fa33e0b7?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Product",
+      "item": [
+        {
+          "name": "Search",
+          "item": [
+            {
+              "name": "search",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "search_item",
+                      "value": "Teer",
+                      "type": "text",
+                      "uuid": "4d621b27-6919-4eb4-9ce6-704890ff5f36"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{amar_bangla}}search",
+                  "host": [
+                    "{{amar_bangla}}search"
+                  ]
+                },
+                "description": "Sumer admin login decs"
+              },
+              "response": [
+                {
+                  "name": "search",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json",
+                        "type": "text"
+                      }
+                    ],
+                    "body": {
+                      "mode": "formdata",
+                      "formdata": [
+                        {
+                          "key": "search_item",
+                          "value": "Teer",
+                          "type": "text",
+                          "uuid": "4d621b27-6919-4eb4-9ce6-704890ff5f36"
+                        }
+                      ]
+                    },
+                    "url": {
+                      "raw": "{{amar_bangla}}search",
+                      "host": [
+                        "{{amar_bangla}}search"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": null,
+                  "header": [
+                    {
+                      "key": "Host",
+                      "value": "127.0.0.1:8002"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "close"
+                    },
+                    {
+                      "key": "X-Powered-By",
+                      "value": "PHP/8.2.12"
+                    },
+                    {
+                      "key": "Cache-Control",
+                      "value": "no-cache, private"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Tue, 07 Apr 2026 05:00:43 GMT"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "X-RateLimit-Limit",
+                      "value": "60"
+                    },
+                    {
+                      "key": "X-RateLimit-Remaining",
+                      "value": "59"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Origin",
+                      "value": "*"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"data\": [\n        {\n            \"prod_id\": 5,\n            \"sch_id\": 1,\n            \"store_id\": 1,\n            \"name\": \"murad\",\n            \"size\": 0,\n            \"quantity\": 10,\n            \"unit\": 1,\n            \"product_code\": null,\n            \"color_family_id\": 0,\n            \"purchase_price\": 160,\n            \"selling_price\": 167,\n            \"purchase_date\": \"2024-05-19 20:18:48\",\n            \"purchase_type\": \"1\",\n            \"supplier_id\": 1,\n            \"serial_number\": null,\n            \"brand_id\": null,\n            \"demo_id\": 5,\n            \"show_global_price\": \"0\",\n            \"picture\": \"[\\\"product_1716128270_d1002a5d9e8f413b82c6.jpg\\\"]\",\n            \"warranty\": null,\n            \"barcode\": null,\n            \"prod_cat_id\": 4,\n            \"seller_commission\": 0,\n            \"description\": null,\n            \"meta_title\": null,\n            \"meta_keyword\": null,\n            \"meta_description\": null,\n            \"status\": \"1\",\n            \"createdDtm\": \"2024-05-19 13:03:30\",\n            \"createdBy\": 1,\n            \"updateDtm\": \"2024-05-19 20:21:20\",\n            \"updatedBy\": 1,\n            \"deleted\": null,\n            \"deletedRole\": null,\n            \"agent_id\": 1,\n            \"email\": \"murad@gmail.com\",\n            \"cash\": 41100,\n            \"del_balance\": null,\n            \"reserve_cash\": null,\n            \"sup_comm\": 2,\n            \"address\": \"Test\",\n            \"global_address_id\": 10430,\n            \"mobile\": 1923149437,\n            \"comment\": \"Test\",\n            \"logo\": \"profile_1716120296_2cad9d2ed0aecb4add23.png\",\n            \"image\": \"pro_1716120296_f45ab5a55749b3395e19.png\",\n            \"banner\": null,\n            \"is_default\": \"0\",\n            \"shop_cat_id\": 2,\n            \"priority\": \"0\",\n            \"sms\": null,\n            \"home_feature\": \"1\",\n            \"type\": \"Both\",\n            \"updatedDtm\": \"2024-05-25 12:06:16\",\n            \"opening_status\": \"1\",\n            \"product_name\": \"Teer Fortified Soyabean Oil 1 ltr\",\n            \"product_image_path\": \"https://amarbangla.com.bd/uploads/demo_product_image/\"\n        },\n        {\n            \"prod_id\": 15,\n            \"sch_id\": 2,\n            \"store_id\": 2,\n            \"name\": \"Khan Shop\",\n            \"size\": 0,\n            \"quantity\": 10,\n            \"unit\": 1,\n            \"product_code\": null,\n            \"color_family_id\": 0,\n            \"purchase_price\": 160,\n            \"selling_price\": 167,\n            \"purchase_date\": \"2024-07-17 11:15:38\",\n            \"purchase_type\": \"1\",\n            \"supplier_id\": 2,\n            \"serial_number\": null,\n            \"brand_id\": null,\n            \"demo_id\": 5,\n            \"show_global_price\": \"0\",\n            \"picture\": \"[\\\"product_1716128270_d1002a5d9e8f413b82c6.jpg\\\"]\",\n            \"warranty\": null,\n            \"barcode\": null,\n            \"prod_cat_id\": 14,\n            \"seller_commission\": 0,\n            \"description\": null,\n            \"meta_title\": null,\n            \"meta_keyword\": null,\n            \"meta_description\": null,\n            \"status\": \"1\",\n            \"createdDtm\": \"2024-05-20 19:38:53\",\n            \"createdBy\": 2,\n            \"updateDtm\": \"2024-07-17 11:15:38\",\n            \"updatedBy\": 2,\n            \"deleted\": null,\n            \"deletedRole\": null,\n            \"agent_id\": 2,\n            \"email\": \"khan@gmail.com\",\n            \"cash\": 377650,\n            \"del_balance\": null,\n            \"reserve_cash\": null,\n            \"sup_comm\": 10,\n            \"address\": \"Noapara\",\n            \"global_address_id\": 10430,\n            \"mobile\": 1488888888,\n            \"comment\": \"Wow!\",\n            \"logo\": \"logo_1716906223_ced7cdf330c7bf5b2301.jpg\",\n            \"image\": \"pro_1716467766_273fcd2c57bb43396d2e.jpg\",\n            \"banner\": \"banner_1716899823_d9da31e1e73fdaa41daf.jpg\",\n            \"is_default\": \"0\",\n            \"shop_cat_id\": 4,\n            \"priority\": \"1\",\n            \"sms\": null,\n            \"home_feature\": \"1\",\n            \"type\": \"Both\",\n            \"updatedDtm\": \"2024-05-30 20:27:47\",\n            \"opening_status\": \"1\",\n            \"product_name\": \"Teer Fortified Soyabean Oil 1 ltr\",\n            \"product_image_path\": \"https://amarbangla.com.bd/uploads/demo_product_image/\"\n        }\n    ],\n    \"status\": 200\n}"
+                }
+              ]
+            },
+            {
+              "name": "Search Item With Limit",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "search_item",
+                      "value": "Teer",
+                      "type": "text",
+                      "uuid": "4d621b27-6919-4eb4-9ce6-704890ff5f36"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{amar_bangla}}search/1",
+                  "host": [
+                    "{{amar_bangla}}search"
+                  ],
+                  "path": [
+                    "1"
+                  ]
+                },
+                "description": "Sumer admin login decs"
+              },
+              "response": [
+                {
+                  "name": "Search Item With Limit",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json",
+                        "type": "text"
+                      }
+                    ],
+                    "body": {
+                      "mode": "formdata",
+                      "formdata": [
+                        {
+                          "key": "search_item",
+                          "value": "Teer",
+                          "type": "text",
+                          "uuid": "4d621b27-6919-4eb4-9ce6-704890ff5f36"
+                        }
+                      ]
+                    },
+                    "url": {
+                      "raw": "{{amar_bangla}}search/1",
+                      "host": [
+                        "{{amar_bangla}}search"
+                      ],
+                      "path": [
+                        "1"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": null,
+                  "header": [
+                    {
+                      "key": "Host",
+                      "value": "127.0.0.1:8002"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "close"
+                    },
+                    {
+                      "key": "X-Powered-By",
+                      "value": "PHP/8.2.12"
+                    },
+                    {
+                      "key": "Cache-Control",
+                      "value": "no-cache, private"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Tue, 07 Apr 2026 05:01:46 GMT"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "X-RateLimit-Limit",
+                      "value": "60"
+                    },
+                    {
+                      "key": "X-RateLimit-Remaining",
+                      "value": "59"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Origin",
+                      "value": "*"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"data\": [\n        {\n            \"prod_id\": 5,\n            \"sch_id\": 1,\n            \"store_id\": 1,\n            \"name\": \"murad\",\n            \"size\": 0,\n            \"quantity\": 10,\n            \"unit\": 1,\n            \"product_code\": null,\n            \"color_family_id\": 0,\n            \"purchase_price\": 160,\n            \"selling_price\": 167,\n            \"purchase_date\": \"2024-05-19 20:18:48\",\n            \"purchase_type\": \"1\",\n            \"supplier_id\": 1,\n            \"serial_number\": null,\n            \"brand_id\": null,\n            \"demo_id\": 5,\n            \"show_global_price\": \"0\",\n            \"picture\": \"[\\\"product_1716128270_d1002a5d9e8f413b82c6.jpg\\\"]\",\n            \"warranty\": null,\n            \"barcode\": null,\n            \"prod_cat_id\": 4,\n            \"seller_commission\": 0,\n            \"description\": null,\n            \"meta_title\": null,\n            \"meta_keyword\": null,\n            \"meta_description\": null,\n            \"status\": \"1\",\n            \"createdDtm\": \"2024-05-19 13:03:30\",\n            \"createdBy\": 1,\n            \"updateDtm\": \"2024-05-19 20:21:20\",\n            \"updatedBy\": 1,\n            \"deleted\": null,\n            \"deletedRole\": null,\n            \"agent_id\": 1,\n            \"email\": \"murad@gmail.com\",\n            \"cash\": 41100,\n            \"del_balance\": null,\n            \"reserve_cash\": null,\n            \"sup_comm\": 2,\n            \"address\": \"Test\",\n            \"global_address_id\": 10430,\n            \"mobile\": 1923149437,\n            \"comment\": \"Test\",\n            \"logo\": \"profile_1716120296_2cad9d2ed0aecb4add23.png\",\n            \"image\": \"pro_1716120296_f45ab5a55749b3395e19.png\",\n            \"banner\": null,\n            \"is_default\": \"0\",\n            \"shop_cat_id\": 2,\n            \"priority\": \"0\",\n            \"sms\": null,\n            \"home_feature\": \"1\",\n            \"type\": \"Both\",\n            \"updatedDtm\": \"2024-05-25 12:06:16\",\n            \"opening_status\": \"1\",\n            \"product_name\": \"Teer Fortified Soyabean Oil 1 ltr\",\n            \"product_image_path\": \"https://amarbangla.com.bd/uploads/demo_product_image/\"\n        }\n    ],\n    \"status\": 200\n}"
+                }
+              ]
+            },
+            {
+              "name": "Search Item With Limit and Order Type",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "search_item",
+                      "value": "Teer",
+                      "type": "text",
+                      "uuid": "4d621b27-6919-4eb4-9ce6-704890ff5f36"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{amar_bangla}}search/2/desc",
+                  "host": [
+                    "{{amar_bangla}}search"
+                  ],
+                  "path": [
+                    "2",
+                    "desc"
+                  ]
+                },
+                "description": "Sumer admin login decs"
+              },
+              "response": [
+                {
+                  "name": "Search Item With Limit and Order Type",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json",
+                        "type": "text"
+                      }
+                    ],
+                    "body": {
+                      "mode": "formdata",
+                      "formdata": [
+                        {
+                          "key": "search_item",
+                          "value": "Teer",
+                          "type": "text",
+                          "uuid": "4d621b27-6919-4eb4-9ce6-704890ff5f36"
+                        }
+                      ]
+                    },
+                    "url": {
+                      "raw": "{{amar_bangla}}search/2/desc",
+                      "host": [
+                        "{{amar_bangla}}search"
+                      ],
+                      "path": [
+                        "2",
+                        "desc"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": null,
+                  "header": [
+                    {
+                      "key": "Host",
+                      "value": "127.0.0.1:8002"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "close"
+                    },
+                    {
+                      "key": "X-Powered-By",
+                      "value": "PHP/8.2.12"
+                    },
+                    {
+                      "key": "Cache-Control",
+                      "value": "no-cache, private"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Tue, 07 Apr 2026 05:02:49 GMT"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "X-RateLimit-Limit",
+                      "value": "60"
+                    },
+                    {
+                      "key": "X-RateLimit-Remaining",
+                      "value": "59"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Origin",
+                      "value": "*"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"data\": [\n        {\n            \"prod_id\": 15,\n            \"sch_id\": 2,\n            \"store_id\": 2,\n            \"name\": \"Khan Shop\",\n            \"size\": 0,\n            \"quantity\": 10,\n            \"unit\": 1,\n            \"product_code\": null,\n            \"color_family_id\": 0,\n            \"purchase_price\": 160,\n            \"selling_price\": 167,\n            \"purchase_date\": \"2024-07-17 11:15:38\",\n            \"purchase_type\": \"1\",\n            \"supplier_id\": 2,\n            \"serial_number\": null,\n            \"brand_id\": null,\n            \"demo_id\": 5,\n            \"show_global_price\": \"0\",\n            \"picture\": \"[\\\"product_1716128270_d1002a5d9e8f413b82c6.jpg\\\"]\",\n            \"warranty\": null,\n            \"barcode\": null,\n            \"prod_cat_id\": 14,\n            \"seller_commission\": 0,\n            \"description\": null,\n            \"meta_title\": null,\n            \"meta_keyword\": null,\n            \"meta_description\": null,\n            \"status\": \"1\",\n            \"createdDtm\": \"2024-05-20 19:38:53\",\n            \"createdBy\": 2,\n            \"updateDtm\": \"2024-07-17 11:15:38\",\n            \"updatedBy\": 2,\n            \"deleted\": null,\n            \"deletedRole\": null,\n            \"agent_id\": 2,\n            \"email\": \"khan@gmail.com\",\n            \"cash\": 377650,\n            \"del_balance\": null,\n            \"reserve_cash\": null,\n            \"sup_comm\": 10,\n            \"address\": \"Noapara\",\n            \"global_address_id\": 10430,\n            \"mobile\": 1488888888,\n            \"comment\": \"Wow!\",\n            \"logo\": \"logo_1716906223_ced7cdf330c7bf5b2301.jpg\",\n            \"image\": \"pro_1716467766_273fcd2c57bb43396d2e.jpg\",\n            \"banner\": \"banner_1716899823_d9da31e1e73fdaa41daf.jpg\",\n            \"is_default\": \"0\",\n            \"shop_cat_id\": 4,\n            \"priority\": \"1\",\n            \"sms\": null,\n            \"home_feature\": \"1\",\n            \"type\": \"Both\",\n            \"updatedDtm\": \"2024-05-30 20:27:47\",\n            \"opening_status\": \"1\",\n            \"product_name\": \"Teer Fortified Soyabean Oil 1 ltr\",\n            \"product_image_path\": \"https://amarbangla.com.bd/uploads/demo_product_image/\"\n        },\n        {\n            \"prod_id\": 5,\n            \"sch_id\": 1,\n            \"store_id\": 1,\n            \"name\": \"murad\",\n            \"size\": 0,\n            \"quantity\": 10,\n            \"unit\": 1,\n            \"product_code\": null,\n            \"color_family_id\": 0,\n            \"purchase_price\": 160,\n            \"selling_price\": 167,\n            \"purchase_date\": \"2024-05-19 20:18:48\",\n            \"purchase_type\": \"1\",\n            \"supplier_id\": 1,\n            \"serial_number\": null,\n            \"brand_id\": null,\n            \"demo_id\": 5,\n            \"show_global_price\": \"0\",\n            \"picture\": \"[\\\"product_1716128270_d1002a5d9e8f413b82c6.jpg\\\"]\",\n            \"warranty\": null,\n            \"barcode\": null,\n            \"prod_cat_id\": 4,\n            \"seller_commission\": 0,\n            \"description\": null,\n            \"meta_title\": null,\n            \"meta_keyword\": null,\n            \"meta_description\": null,\n            \"status\": \"1\",\n            \"createdDtm\": \"2024-05-19 13:03:30\",\n            \"createdBy\": 1,\n            \"updateDtm\": \"2024-05-19 20:21:20\",\n            \"updatedBy\": 1,\n            \"deleted\": null,\n            \"deletedRole\": null,\n            \"agent_id\": 1,\n            \"email\": \"murad@gmail.com\",\n            \"cash\": 41100,\n            \"del_balance\": null,\n            \"reserve_cash\": null,\n            \"sup_comm\": 2,\n            \"address\": \"Test\",\n            \"global_address_id\": 10430,\n            \"mobile\": 1923149437,\n            \"comment\": \"Test\",\n            \"logo\": \"profile_1716120296_2cad9d2ed0aecb4add23.png\",\n            \"image\": \"pro_1716120296_f45ab5a55749b3395e19.png\",\n            \"banner\": null,\n            \"is_default\": \"0\",\n            \"shop_cat_id\": 2,\n            \"priority\": \"0\",\n            \"sms\": null,\n            \"home_feature\": \"1\",\n            \"type\": \"Both\",\n            \"updatedDtm\": \"2024-05-25 12:06:16\",\n            \"opening_status\": \"1\",\n            \"product_name\": \"Teer Fortified Soyabean Oil 1 ltr\",\n            \"product_image_path\": \"https://amarbangla.com.bd/uploads/demo_product_image/\"\n        }\n    ],\n    \"status\": 200\n}"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Retrieve popular product list",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{amar_bangla}}get_popular_products/0/5/ASC",
+              "host": [
+                "{{amar_bangla}}get_popular_products"
+              ],
+              "path": [
+                "0",
+                "5",
+                "ASC"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Retrieve popular product list",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{amar_bangla}}get_popular_products/0/5/ASC",
+                  "host": [
+                    "{{amar_bangla}}get_popular_products"
+                  ],
+                  "path": [
+                    "0",
+                    "5",
+                    "ASC"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "127.0.0.1:8002"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.2.12"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 07 Apr 2026 05:06:45 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "X-RateLimit-Limit",
+                  "value": "60"
+                },
+                {
+                  "key": "X-RateLimit-Remaining",
+                  "value": "58"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"data\": [\n        {\n            \"prod_id\": 11,\n            \"sch_id\": 2,\n            \"store_id\": 2,\n            \"name\": \"Khan Shop\",\n            \"size\": 77,\n            \"quantity\": 100,\n            \"unit\": 1,\n            \"product_code\": \"22\",\n            \"color_family_id\": 1,\n            \"purchase_price\": 200,\n            \"selling_price\": 270,\n            \"purchase_date\": \"2024-05-21 18:45:36\",\n            \"purchase_type\": \"0\",\n            \"supplier_id\": 2,\n            \"serial_number\": null,\n            \"brand_id\": 2,\n            \"demo_id\": null,\n            \"show_global_price\": \"0\",\n            \"picture\": \"[\\\"product_1719658576_92a6cb590b1578ea780b.jpg\\\"]\",\n            \"warranty\": \"\",\n            \"barcode\": null,\n            \"prod_cat_id\": 9,\n            \"seller_commission\": 5,\n            \"description\": \"<p>Apple 1 kg</p>\",\n            \"meta_title\": \"Apple\",\n            \"meta_keyword\": \"Apple\",\n            \"meta_description\": \"<p>Apple<br></p>\",\n            \"status\": \"1\",\n            \"createdDtm\": \"2024-05-20 19:38:53\",\n            \"createdBy\": 2,\n            \"updateDtm\": \"2024-06-29 16:56:16\",\n            \"updatedBy\": 2,\n            \"deleted\": null,\n            \"deletedRole\": null,\n            \"feature_id\": 2,\n            \"popular\": \"1\",\n            \"featured\": \"1\",\n            \"hot\": \"1\",\n            \"agent_id\": 2,\n            \"email\": \"khan@gmail.com\",\n            \"cash\": 377650,\n            \"del_balance\": null,\n            \"reserve_cash\": null,\n            \"sup_comm\": 10,\n            \"address\": \"Noapara\",\n            \"global_address_id\": 10430,\n            \"mobile\": 1488888888,\n            \"comment\": \"Wow!\",\n            \"logo\": \"logo_1716906223_ced7cdf330c7bf5b2301.jpg\",\n            \"image\": \"pro_1716467766_273fcd2c57bb43396d2e.jpg\",\n            \"banner\": \"banner_1716899823_d9da31e1e73fdaa41daf.jpg\",\n            \"is_default\": \"0\",\n            \"shop_cat_id\": 4,\n            \"priority\": \"1\",\n            \"sms\": null,\n            \"home_feature\": \"1\",\n            \"type\": \"Both\",\n            \"updatedDtm\": \"2024-05-30 20:27:47\",\n            \"opening_status\": \"1\",\n            \"product_image_path\": \"https://amarbangla.com.bd/uploads/product_image/\"\n        }\n    ],\n    \"status\": 200\n}"
+            }
+          ]
+        },
+        {
+          "name": "Retrieve hot product list",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{amar_bangla}}get_hot_products/0/5/ASC",
+              "host": [
+                "{{amar_bangla}}get_hot_products"
+              ],
+              "path": [
+                "0",
+                "5",
+                "ASC"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Retrieve hot product list",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{amar_bangla}}get_hot_products/0/5/ASC",
+                  "host": [
+                    "{{amar_bangla}}get_hot_products"
+                  ],
+                  "path": [
+                    "0",
+                    "5",
+                    "ASC"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "127.0.0.1:8002"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.2.12"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 07 Apr 2026 05:07:56 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "X-RateLimit-Limit",
+                  "value": "60"
+                },
+                {
+                  "key": "X-RateLimit-Remaining",
+                  "value": "59"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"data\": [\n        {\n            \"product_image_path\": \"https://amarbangla.com.bd/uploads/product_image/\",\n            \"prod_id\": 11,\n            \"sch_id\": 2,\n            \"store_id\": 2,\n            \"name\": \"Apple\",\n            \"size\": 77,\n            \"quantity\": 100,\n            \"unit\": 1,\n            \"product_code\": \"22\",\n            \"color_family_id\": 1,\n            \"purchase_price\": 200,\n            \"selling_price\": 270,\n            \"purchase_date\": \"2024-05-21 18:45:36\",\n            \"purchase_type\": \"0\",\n            \"supplier_id\": 2,\n            \"serial_number\": null,\n            \"brand_id\": 2,\n            \"demo_id\": null,\n            \"show_global_price\": \"0\",\n            \"picture\": \"[\\\"product_1719658576_92a6cb590b1578ea780b.jpg\\\"]\",\n            \"warranty\": \"\",\n            \"barcode\": null,\n            \"prod_cat_id\": 9,\n            \"seller_commission\": 5,\n            \"description\": \"<p>Apple 1 kg</p>\",\n            \"meta_title\": \"Apple\",\n            \"meta_keyword\": \"Apple\",\n            \"meta_description\": \"<p>Apple<br></p>\",\n            \"status\": \"1\",\n            \"createdDtm\": \"2024-05-20 19:38:53\",\n            \"createdBy\": 2,\n            \"updateDtm\": \"2024-06-29 16:56:16\",\n            \"updatedBy\": 2,\n            \"deleted\": null,\n            \"deletedRole\": null,\n            \"feature_id\": 2,\n            \"popular\": \"1\",\n            \"featured\": \"1\",\n            \"hot\": \"1\",\n            \"agent_id\": 2,\n            \"email\": \"khan@gmail.com\",\n            \"cash\": 377650,\n            \"del_balance\": null,\n            \"reserve_cash\": null,\n            \"sup_comm\": 10,\n            \"address\": \"Noapara\",\n            \"global_address_id\": 10430,\n            \"mobile\": 1488888888,\n            \"comment\": \"Wow!\",\n            \"logo\": \"logo_1716906223_ced7cdf330c7bf5b2301.jpg\",\n            \"image\": \"pro_1716467766_273fcd2c57bb43396d2e.jpg\",\n            \"banner\": \"banner_1716899823_d9da31e1e73fdaa41daf.jpg\",\n            \"is_default\": \"0\",\n            \"shop_cat_id\": 4,\n            \"priority\": \"1\",\n            \"sms\": null,\n            \"home_feature\": \"1\",\n            \"type\": \"Both\",\n            \"updatedDtm\": \"2024-05-30 20:27:47\",\n            \"opening_status\": \"1\",\n            \"shop_name\": \"Khan Shop\"\n        }\n    ],\n    \"status\": 200\n}"
+            }
+          ]
+        },
+        {
+          "name": "Retrieve featured product list",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{amar_bangla}}get_featured_products/0/5/ASC",
+              "host": [
+                "{{amar_bangla}}get_featured_products"
+              ],
+              "path": [
+                "0",
+                "5",
+                "ASC"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Retrieve featured product list",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{amar_bangla}}get_featured_products/0/5/ASC",
+                  "host": [
+                    "{{amar_bangla}}get_featured_products"
+                  ],
+                  "path": [
+                    "0",
+                    "5",
+                    "ASC"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "127.0.0.1:8002"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.2.12"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 07 Apr 2026 05:09:23 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "X-RateLimit-Limit",
+                  "value": "60"
+                },
+                {
+                  "key": "X-RateLimit-Remaining",
+                  "value": "59"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"data\": [\n        {\n            \"prod_id\": 11,\n            \"sch_id\": 2,\n            \"store_id\": 2,\n            \"name\": \"Khan Shop\",\n            \"size\": 77,\n            \"quantity\": 100,\n            \"unit\": 1,\n            \"product_code\": \"22\",\n            \"color_family_id\": 1,\n            \"purchase_price\": 200,\n            \"selling_price\": 270,\n            \"purchase_date\": \"2024-05-21 18:45:36\",\n            \"purchase_type\": \"0\",\n            \"supplier_id\": 2,\n            \"serial_number\": null,\n            \"brand_id\": 2,\n            \"demo_id\": null,\n            \"show_global_price\": \"0\",\n            \"picture\": \"[\\\"product_1719658576_92a6cb590b1578ea780b.jpg\\\"]\",\n            \"warranty\": \"\",\n            \"barcode\": null,\n            \"prod_cat_id\": 9,\n            \"seller_commission\": 5,\n            \"description\": \"<p>Apple 1 kg</p>\",\n            \"meta_title\": \"Apple\",\n            \"meta_keyword\": \"Apple\",\n            \"meta_description\": \"<p>Apple<br></p>\",\n            \"status\": \"1\",\n            \"createdDtm\": \"2024-05-20 19:38:53\",\n            \"createdBy\": 2,\n            \"updateDtm\": \"2024-06-29 16:56:16\",\n            \"updatedBy\": 2,\n            \"deleted\": null,\n            \"deletedRole\": null,\n            \"feature_id\": 2,\n            \"popular\": \"1\",\n            \"featured\": \"1\",\n            \"hot\": \"1\",\n            \"agent_id\": 2,\n            \"email\": \"khan@gmail.com\",\n            \"cash\": 377650,\n            \"del_balance\": null,\n            \"reserve_cash\": null,\n            \"sup_comm\": 10,\n            \"address\": \"Noapara\",\n            \"global_address_id\": 10430,\n            \"mobile\": 1488888888,\n            \"comment\": \"Wow!\",\n            \"logo\": \"logo_1716906223_ced7cdf330c7bf5b2301.jpg\",\n            \"image\": \"pro_1716467766_273fcd2c57bb43396d2e.jpg\",\n            \"banner\": \"banner_1716899823_d9da31e1e73fdaa41daf.jpg\",\n            \"is_default\": \"0\",\n            \"shop_cat_id\": 4,\n            \"priority\": \"1\",\n            \"sms\": null,\n            \"home_feature\": \"1\",\n            \"type\": \"Both\",\n            \"updatedDtm\": \"2024-05-30 20:27:47\",\n            \"opening_status\": \"1\",\n            \"product_image_path\": \"https://amarbangla.com.bd/uploads/product_image/\"\n        }\n    ],\n    \"status\": 200\n}"
+            }
+          ]
+        },
+        {
+          "name": "Retrieve product details by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{amar_bangla}}get_products_details/11/2",
+              "host": [
+                "{{amar_bangla}}get_products_details"
+              ],
+              "path": [
+                "11",
+                "2"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Retrieve product details by ID",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{amar_bangla}}get_products_details/11/2",
+                  "host": [
+                    "{{amar_bangla}}get_products_details"
+                  ],
+                  "path": [
+                    "11",
+                    "2"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "127.0.0.1:8002"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.2.12"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 07 Apr 2026 05:18:21 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "X-RateLimit-Limit",
+                  "value": "60"
+                },
+                {
+                  "key": "X-RateLimit-Remaining",
+                  "value": "59"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"data\": {\n        \"prod_id\": 11,\n        \"sch_id\": 2,\n        \"store_id\": 2,\n        \"name\": \"Apple\",\n        \"size\": 77,\n        \"quantity\": 100,\n        \"unit\": 1,\n        \"product_code\": \"22\",\n        \"color_family_id\": 1,\n        \"purchase_price\": 200,\n        \"selling_price\": 270,\n        \"purchase_date\": \"2024-05-21 18:45:36\",\n        \"purchase_type\": \"0\",\n        \"supplier_id\": 2,\n        \"serial_number\": null,\n        \"brand_id\": 2,\n        \"demo_id\": null,\n        \"show_global_price\": \"0\",\n        \"picture\": \"[\\\"product_1719658576_92a6cb590b1578ea780b.jpg\\\"]\",\n        \"warranty\": \"\",\n        \"barcode\": null,\n        \"prod_cat_id\": 9,\n        \"seller_commission\": 5,\n        \"description\": \"<p>Apple 1 kg</p>\",\n        \"meta_title\": \"Apple\",\n        \"meta_keyword\": \"Apple\",\n        \"meta_description\": \"<p>Apple<br></p>\",\n        \"status\": \"1\",\n        \"createdDtm\": \"2024-05-21 12:45:36\",\n        \"createdBy\": 2,\n        \"updateDtm\": \"2024-06-29 16:56:16\",\n        \"updatedBy\": 2,\n        \"deleted\": null,\n        \"deletedRole\": null\n    },\n    \"status\": 200\n}"
+            }
+          ]
+        },
+        {
+          "name": "Retrieve product size options",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{amar_bangla}}get_products_size_option/11/2",
+              "host": [
+                "{{amar_bangla}}get_products_size_option"
+              ],
+              "path": [
+                "11",
+                "2"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Retrieve product size options",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{amar_bangla}}get_products_size_option/11/2",
+                  "host": [
+                    "{{amar_bangla}}get_products_size_option"
+                  ],
+                  "path": [
+                    "11",
+                    "2"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "127.0.0.1:8002"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.2.12"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 07 Apr 2026 05:40:03 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "X-RateLimit-Limit",
+                  "value": "60"
+                },
+                {
+                  "key": "X-RateLimit-Remaining",
+                  "value": "59"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"data\": [\n        {\n            \"prod_id\": 10,\n            \"size\": 77\n        },\n        {\n            \"prod_id\": 11,\n            \"size\": 77\n        }\n    ],\n    \"status\": 200\n}"
+            }
+          ]
+        },
+        {
+          "name": "Retrieve product color options",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{amar_bangla}}get_products_color_option/11/2",
+              "host": [
+                "{{amar_bangla}}get_products_color_option"
+              ],
+              "path": [
+                "11",
+                "2"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Retrieve product color options",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{amar_bangla}}get_products_color_option/11/2",
+                  "host": [
+                    "{{amar_bangla}}get_products_color_option"
+                  ],
+                  "path": [
+                    "11",
+                    "2"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "127.0.0.1:8002"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.2.12"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 07 Apr 2026 05:41:07 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "X-RateLimit-Limit",
+                  "value": "60"
+                },
+                {
+                  "key": "X-RateLimit-Remaining",
+                  "value": "59"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"data\": [\n        {\n            \"prod_id\": 10,\n            \"color_family_id\": 1,\n            \"code\": \"rgb(220, 53, 69)\",\n            \"color_name\": \"Red\"\n        },\n        {\n            \"prod_id\": 11,\n            \"color_family_id\": 1,\n            \"code\": \"rgb(220, 53, 69)\",\n            \"color_name\": \"Red\"\n        }\n    ],\n    \"status\": 200\n}"
+            }
+          ]
+        },
+        {
+          "name": "Retrieve product image by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{amar_bangla}}get_products_image/11",
+              "host": [
+                "{{amar_bangla}}get_products_image"
+              ],
+              "path": [
+                "11"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Retrieve product image by ID",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{amar_bangla}}get_products_image/11",
+                  "host": [
+                    "{{amar_bangla}}get_products_image"
+                  ],
+                  "path": [
+                    "11"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "127.0.0.1:8002"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.2.12"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 07 Apr 2026 05:31:34 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "X-RateLimit-Limit",
+                  "value": "60"
+                },
+                {
+                  "key": "X-RateLimit-Remaining",
+                  "value": "57"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"data\": \"product_1719658576_92a6cb590b1578ea780b.jpg\",\n    \"status\": 200\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Shops",
+      "item": [
+        {
+          "name": "Need Authntication",
+          "item": [
+            {
+              "name": "Retrieve all local shops list",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "search_item",
+                      "value": "Teer",
+                      "type": "text",
+                      "uuid": "4d621b27-6919-4eb4-9ce6-704890ff5f36"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{amar_bangla}}get_all_local_shop_list/",
+                  "host": [
+                    "{{amar_bangla}}get_all_local_shop_list"
+                  ],
+                  "path": [
+                    ""
+                  ]
+                },
+                "description": "Sumer admin login decs"
+              },
+              "response": [
+                {
+                  "name": "Retrieve all local shops list",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json",
+                        "type": "text"
+                      }
+                    ],
+                    "body": {
+                      "mode": "formdata",
+                      "formdata": [
+                        {
+                          "key": "search_item",
+                          "value": "Teer",
+                          "type": "text",
+                          "uuid": "4d621b27-6919-4eb4-9ce6-704890ff5f36"
+                        }
+                      ]
+                    },
+                    "url": {
+                      "raw": "{{amar_bangla}}get_all_local_shop_list/",
+                      "host": [
+                        "{{amar_bangla}}get_all_local_shop_list"
+                      ],
+                      "path": [
+                        ""
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": null,
+                  "header": [
+                    {
+                      "key": "Host",
+                      "value": "127.0.0.1:8002"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "close"
+                    },
+                    {
+                      "key": "X-Powered-By",
+                      "value": "PHP/8.2.12"
+                    },
+                    {
+                      "key": "Cache-Control",
+                      "value": "no-cache, private"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Tue, 07 Apr 2026 07:18:10 GMT"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "X-RateLimit-Limit",
+                      "value": "60"
+                    },
+                    {
+                      "key": "X-RateLimit-Remaining",
+                      "value": "59"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Origin",
+                      "value": "*"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"data\": [\n        {\n            \"ShopID\": 1,\n            \"ShopName\": \"murad\",\n            \"image\": \"pro_1716120296_f45ab5a55749b3395e19.png\"\n        },\n        {\n            \"ShopID\": 3,\n            \"ShopName\": \"Noapara LPG service \",\n            \"image\": \"pro_1716613215_246f41168066c723125e.jpeg\"\n        }\n    ],\n    \"status\": 200\n}"
+                }
+              ]
+            },
+            {
+              "name": "Retrieve local shops list by category",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "search_item",
+                      "value": "Teer",
+                      "type": "text",
+                      "uuid": "4d621b27-6919-4eb4-9ce6-704890ff5f36"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{amar_bangla}}get_local_shop_list_by_category/4",
+                  "host": [
+                    "{{amar_bangla}}get_local_shop_list_by_category"
+                  ],
+                  "path": [
+                    "4"
+                  ]
+                },
+                "description": "Sumer admin login decs"
+              },
+              "response": [
+                {
+                  "name": "Retrieve local shops list by category",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json",
+                        "type": "text"
+                      }
+                    ],
+                    "body": {
+                      "mode": "formdata",
+                      "formdata": [
+                        {
+                          "key": "search_item",
+                          "value": "Teer",
+                          "type": "text",
+                          "uuid": "4d621b27-6919-4eb4-9ce6-704890ff5f36"
+                        }
+                      ]
+                    },
+                    "url": {
+                      "raw": "{{amar_bangla}}get_local_shop_list_by_category/4",
+                      "host": [
+                        "{{amar_bangla}}get_local_shop_list_by_category"
+                      ],
+                      "path": [
+                        "4"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": null,
+                  "header": [
+                    {
+                      "key": "Host",
+                      "value": "127.0.0.1:8002"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "close"
+                    },
+                    {
+                      "key": "X-Powered-By",
+                      "value": "PHP/8.2.12"
+                    },
+                    {
+                      "key": "Cache-Control",
+                      "value": "no-cache, private"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Tue, 07 Apr 2026 07:18:41 GMT"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "X-RateLimit-Limit",
+                      "value": "60"
+                    },
+                    {
+                      "key": "X-RateLimit-Remaining",
+                      "value": "56"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Origin",
+                      "value": "*"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"data\": [\n        {\n            \"ShopID\": 3,\n            \"ShopName\": \"Noapara LPG service \",\n            \"image\": \"pro_1716613215_246f41168066c723125e.jpeg\"\n        }\n    ],\n    \"status\": 200\n}"
+                }
+              ]
+            },
+            {
+              "name": "Retrieve local shops list by global address",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "search_item",
+                      "value": "Teer",
+                      "type": "text",
+                      "uuid": "4d621b27-6919-4eb4-9ce6-704890ff5f36"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{amar_bangla}}get_local_shops_list/10430/0/null/ASC",
+                  "host": [
+                    "{{amar_bangla}}get_local_shops_list"
+                  ],
+                  "path": [
+                    "10430",
+                    "0",
+                    "null",
+                    "ASC"
+                  ]
+                },
+                "description": "Sumer admin login decs"
+              },
+              "response": [
+                {
+                  "name": "Retrieve local shops list by global address",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json",
+                        "type": "text"
+                      }
+                    ],
+                    "body": {
+                      "mode": "formdata",
+                      "formdata": [
+                        {
+                          "key": "search_item",
+                          "value": "Teer",
+                          "type": "text",
+                          "uuid": "4d621b27-6919-4eb4-9ce6-704890ff5f36"
+                        }
+                      ]
+                    },
+                    "url": {
+                      "raw": "{{amar_bangla}}get_local_shops_list/10430/",
+                      "host": [
+                        "{{amar_bangla}}get_local_shops_list"
+                      ],
+                      "path": [
+                        "10430",
+                        ""
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": null,
+                  "header": [
+                    {
+                      "key": "Host",
+                      "value": "127.0.0.1:8002"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "close"
+                    },
+                    {
+                      "key": "X-Powered-By",
+                      "value": "PHP/8.2.12"
+                    },
+                    {
+                      "key": "Cache-Control",
+                      "value": "no-cache, private"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Tue, 07 Apr 2026 07:19:10 GMT"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "X-RateLimit-Limit",
+                      "value": "60"
+                    },
+                    {
+                      "key": "X-RateLimit-Remaining",
+                      "value": "59"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Origin",
+                      "value": "*"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"data\": [\n        {\n            \"ShopID\": 1,\n            \"ShopName\": \"murad\",\n            \"image\": \"pro_1716120296_f45ab5a55749b3395e19.png\"\n        }\n    ],\n    \"status\": 200\n}"
+                }
+              ]
+            },
+            {
+              "name": "Retrieve local shop details by ID",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "search_item",
+                      "value": "Teer",
+                      "type": "text",
+                      "uuid": "4d621b27-6919-4eb4-9ce6-704890ff5f36"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{amar_bangla}}get_local_shop_detail/1",
+                  "host": [
+                    "{{amar_bangla}}get_local_shop_detail"
+                  ],
+                  "path": [
+                    "1"
+                  ]
+                },
+                "description": "Sumer admin login decs"
+              },
+              "response": [
+                {
+                  "name": "Retrieve local shop details by ID",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json",
+                        "type": "text"
+                      }
+                    ],
+                    "body": {
+                      "mode": "formdata",
+                      "formdata": [
+                        {
+                          "key": "search_item",
+                          "value": "Teer",
+                          "type": "text",
+                          "uuid": "4d621b27-6919-4eb4-9ce6-704890ff5f36"
+                        }
+                      ]
+                    },
+                    "url": {
+                      "raw": "{{amar_bangla}}get_local_shop_detail/1",
+                      "host": [
+                        "{{amar_bangla}}get_local_shop_detail"
+                      ],
+                      "path": [
+                        "1"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": null,
+                  "header": [
+                    {
+                      "key": "Host",
+                      "value": "127.0.0.1:8002"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "close"
+                    },
+                    {
+                      "key": "X-Powered-By",
+                      "value": "PHP/8.2.12"
+                    },
+                    {
+                      "key": "Cache-Control",
+                      "value": "no-cache, private"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Tue, 07 Apr 2026 07:15:10 GMT"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "X-RateLimit-Limit",
+                      "value": "60"
+                    },
+                    {
+                      "key": "X-RateLimit-Remaining",
+                      "value": "56"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Origin",
+                      "value": "*"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"data\": [\n        {\n            \"sch_id\": 1,\n            \"agent_id\": 1,\n            \"name\": \"murad\",\n            \"email\": \"murad@gmail.com\",\n            \"cash\": 41100,\n            \"del_balance\": null,\n            \"reserve_cash\": null,\n            \"sup_comm\": 2,\n            \"address\": \"Test\",\n            \"global_address_id\": 10430,\n            \"mobile\": 1923149437,\n            \"comment\": \"Test\",\n            \"logo\": \"https://amarbangla.com.bd/uploads/schools/no_image.jpg\",\n            \"image\": \"https://amarbangla.com.bd/uploads/schools/no_image.jpg\",\n            \"banner\": \"https://amarbangla.com.bd/uploads/schools/\",\n            \"is_default\": \"0\",\n            \"shop_cat_id\": 2,\n            \"priority\": \"0\",\n            \"sms\": null,\n            \"home_feature\": \"1\",\n            \"type\": \"Both\",\n            \"createdDtm\": \"2024-05-19 13:03:30\",\n            \"updatedBy\": 1,\n            \"updatedDtm\": \"2024-05-25 12:06:16\",\n            \"status\": \"1\",\n            \"opening_status\": \"1\",\n            \"deleted\": null,\n            \"deletedRole\": null,\n            \"barcode_img_size\": \"100\",\n            \"barcode_type\": \"C128A\",\n            \"business_type\": \"Ownership business\",\n            \"currency\": \"BDT\",\n            \"currency_before_symbol\": \"৳\",\n            \"currency_after_symbol\": \"/-\",\n            \"running_year\": \"2018-2019\",\n            \"disable_frontend\": \"0\",\n            \"phone_code\": \"880\",\n            \"country\": \"Bangladesh\",\n            \"customer_panel_banner\": \"https://amarbangla.com.bd/uploads/customer_dashboard/\",\n            \"customer_panel_banner_mobile\": \"https://amarbangla.com.bd/uploads/customer_dashboard/\",\n            \"customer_panel_video\": \"\"\n        }\n    ],\n    \"status\": 200\n}"
+                }
+              ]
+            }
+          ],
+          "auth": {
+            "type": "bearer",
+            "bearer": [
+              {
+                "key": "token",
+                "value": "2|j9n0UY0Nh6BR0H2AZsEQi64uA4qe9H84FmkQPaUU469b9757",
+                "type": "string"
+              }
+            ]
+          },
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {},
+                "exec": [
+                  ""
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {},
+                "exec": [
+                  ""
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Retrieve regular shops list",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "search_item",
+                  "value": "Teer",
+                  "type": "text",
+                  "uuid": "4d621b27-6919-4eb4-9ce6-704890ff5f36"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{amar_bangla}}get_regular_shop_list/",
+              "host": [
+                "{{amar_bangla}}get_regular_shop_list"
+              ],
+              "path": [
+                ""
+              ]
+            },
+            "description": "Sumer admin login decs"
+          },
+          "response": [
+            {
+              "name": "Retrieve regular shops list",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "search_item",
+                      "value": "Teer",
+                      "type": "text",
+                      "uuid": "4d621b27-6919-4eb4-9ce6-704890ff5f36"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{amar_bangla}}get_regular_shop_list/",
+                  "host": [
+                    "{{amar_bangla}}get_regular_shop_list"
+                  ],
+                  "path": [
+                    ""
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "127.0.0.1:8002"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.2.12"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 07 Apr 2026 05:49:03 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "X-RateLimit-Limit",
+                  "value": "60"
+                },
+                {
+                  "key": "X-RateLimit-Remaining",
+                  "value": "59"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"data\": [\n        {\n            \"ShopID\": 2,\n            \"ShopName\": \"Khan Shop\",\n            \"image\": \"pro_1716467766_273fcd2c57bb43396d2e.jpg\"\n        }\n    ],\n    \"status\": 200\n}"
+            }
+          ]
+        },
+        {
+          "name": "Retrieve regular shops list by category",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "search_item",
+                  "value": "Teer",
+                  "type": "text",
+                  "uuid": "4d621b27-6919-4eb4-9ce6-704890ff5f36"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{amar_bangla}}get_regular_shop_list_by_category/4",
+              "host": [
+                "{{amar_bangla}}get_regular_shop_list_by_category"
+              ],
+              "path": [
+                "4"
+              ]
+            },
+            "description": "Sumer admin login decs"
+          },
+          "response": [
+            {
+              "name": "Retrieve regular shops list by category",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "search_item",
+                      "value": "Teer",
+                      "type": "text",
+                      "uuid": "4d621b27-6919-4eb4-9ce6-704890ff5f36"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{amar_bangla}}get_regular_shop_list_by_category/4",
+                  "host": [
+                    "{{amar_bangla}}get_regular_shop_list_by_category"
+                  ],
+                  "path": [
+                    "4"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "127.0.0.1:8002"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.2.12"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 07 Apr 2026 06:08:04 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "X-RateLimit-Limit",
+                  "value": "60"
+                },
+                {
+                  "key": "X-RateLimit-Remaining",
+                  "value": "59"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"data\": [\n        {\n            \"ShopID\": 2,\n            \"ShopName\": \"Khan Shop\",\n            \"image\": \"pro_1716467766_273fcd2c57bb43396d2e.jpg\"\n        }\n    ],\n    \"status\": 200\n}"
+            }
+          ]
+        },
+        {
+          "name": "Retrieve shop details by ID",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "search_item",
+                  "value": "Teer",
+                  "type": "text",
+                  "uuid": "4d621b27-6919-4eb4-9ce6-704890ff5f36"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{amar_bangla}}get_shop_details/2",
+              "host": [
+                "{{amar_bangla}}get_shop_details"
+              ],
+              "path": [
+                "2"
+              ]
+            },
+            "description": "Sumer admin login decs"
+          },
+          "response": [
+            {
+              "name": "Retrieve shop details by ID",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "search_item",
+                      "value": "Teer",
+                      "type": "text",
+                      "uuid": "4d621b27-6919-4eb4-9ce6-704890ff5f36"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{amar_bangla}}get_shop_details/2",
+                  "host": [
+                    "{{amar_bangla}}get_shop_details"
+                  ],
+                  "path": [
+                    "2"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "127.0.0.1:8002"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.2.12"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 07 Apr 2026 06:09:07 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "X-RateLimit-Limit",
+                  "value": "60"
+                },
+                {
+                  "key": "X-RateLimit-Remaining",
+                  "value": "59"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"data\": [\n        {\n            \"sch_id\": 2,\n            \"agent_id\": 2,\n            \"name\": \"Khan Shop\",\n            \"email\": \"khan@gmail.com\",\n            \"cash\": 377650,\n            \"del_balance\": null,\n            \"reserve_cash\": null,\n            \"sup_comm\": 10,\n            \"address\": \"Noapara\",\n            \"global_address_id\": 10430,\n            \"mobile\": 1488888888,\n            \"comment\": \"Wow!\",\n            \"logo\": \"logo_1716906223_ced7cdf330c7bf5b2301.jpg\",\n            \"image\": \"pro_1716467766_273fcd2c57bb43396d2e.jpg\",\n            \"banner\": \"banner_1716899823_d9da31e1e73fdaa41daf.jpg\",\n            \"is_default\": \"0\",\n            \"shop_cat_id\": 4,\n            \"priority\": \"1\",\n            \"sms\": null,\n            \"home_feature\": \"1\",\n            \"type\": \"Both\",\n            \"createdDtm\": \"2024-05-20 19:38:53\",\n            \"updatedBy\": 2,\n            \"updatedDtm\": \"2024-05-30 20:27:47\",\n            \"status\": \"1\",\n            \"opening_status\": \"1\",\n            \"deleted\": null,\n            \"deletedRole\": null\n        }\n    ],\n    \"status\": 200\n}"
+            }
+          ]
+        },
+        {
+          "name": "Retrieve shop YouTube video URL",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "search_item",
+                  "value": "Teer",
+                  "type": "text",
+                  "uuid": "4d621b27-6919-4eb4-9ce6-704890ff5f36"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{amar_bangla}}get_shop_youtube_url/1",
+              "host": [
+                "{{amar_bangla}}get_shop_youtube_url"
+              ],
+              "path": [
+                "1"
+              ]
+            },
+            "description": "Sumer admin login decs"
+          },
+          "response": [
+            {
+              "name": "Retrieve shop YouTube video URL",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "search_item",
+                      "value": "Teer",
+                      "type": "text",
+                      "uuid": "4d621b27-6919-4eb4-9ce6-704890ff5f36"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{amar_bangla}}get_shop_youtube_url/1",
+                  "host": [
+                    "{{amar_bangla}}get_shop_youtube_url"
+                  ],
+                  "path": [
+                    "1"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "127.0.0.1:8002"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.2.12"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 07 Apr 2026 06:10:05 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "X-RateLimit-Limit",
+                  "value": "60"
+                },
+                {
+                  "key": "X-RateLimit-Remaining",
+                  "value": "57"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"data\": [\n        {\n            \"value\": \"\"\n        }\n    ],\n    \"status\": 200\n}"
+            }
+          ]
+        },
+        {
+          "name": "Retrieve shop settings by label",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "search_item",
+                  "value": "Teer",
+                  "type": "text",
+                  "uuid": "4d621b27-6919-4eb4-9ce6-704890ff5f36"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{amar_bangla}}get_shop_settings_info/1/running_year",
+              "host": [
+                "{{amar_bangla}}get_shop_settings_info"
+              ],
+              "path": [
+                "1",
+                "running_year"
+              ]
+            },
+            "description": "Sumer admin login decs"
+          },
+          "response": [
+            {
+              "name": "Retrieve shop settings by label",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "search_item",
+                      "value": "Teer",
+                      "type": "text",
+                      "uuid": "4d621b27-6919-4eb4-9ce6-704890ff5f36"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{amar_bangla}}get_shop_settings_info/1/running_year",
+                  "host": [
+                    "{{amar_bangla}}get_shop_settings_info"
+                  ],
+                  "path": [
+                    "1",
+                    "running_year"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "127.0.0.1:8002"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.2.12"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 07 Apr 2026 06:14:51 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "X-RateLimit-Limit",
+                  "value": "60"
+                },
+                {
+                  "key": "X-RateLimit-Remaining",
+                  "value": "59"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"data\": [\n        {\n            \"value\": \"2018-2019\"\n        }\n    ],\n    \"status\": 200\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Shop Category",
+      "item": [
+        {
+          "name": "Retrieve all shop categories",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "search_item",
+                  "value": "Teer",
+                  "type": "text",
+                  "uuid": "4d621b27-6919-4eb4-9ce6-704890ff5f36"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{amar_bangla}}get_all_shop_category",
+              "host": [
+                "{{amar_bangla}}get_all_shop_category"
+              ]
+            },
+            "description": "Sumer admin login decs"
+          },
+          "response": [
+            {
+              "name": "Retrieve all shop categories",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "search_item",
+                      "value": "Teer",
+                      "type": "text",
+                      "uuid": "4d621b27-6919-4eb4-9ce6-704890ff5f36"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{amar_bangla}}get_all_shop_category",
+                  "host": [
+                    "{{amar_bangla}}get_all_shop_category"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "127.0.0.1:8002"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.2.12"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 07 Apr 2026 06:31:30 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "X-RateLimit-Limit",
+                  "value": "60"
+                },
+                {
+                  "key": "X-RateLimit-Remaining",
+                  "value": "59"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"data\": [\n        {\n            \"shop_cat_id\": 1,\n            \"name\": \"Test\",\n            \"parent_cat_id\": 0,\n            \"show_home\": \"1\",\n            \"title\": \"Show\",\n            \"image\": \"shop_cat_1716127893_b6e26a651d87c0d0d7ea.jpg\",\n            \"createdBy\": 1,\n            \"createdDtm\": \"2024-05-19 13:03:44\",\n            \"updatedBy\": null,\n            \"updatedDtm\": \"2024-05-19 13:03:44\",\n            \"deleted\": null,\n            \"deletedRole\": null\n        },\n        {\n            \"shop_cat_id\": 2,\n            \"name\": \"test-2\",\n            \"parent_cat_id\": 1,\n            \"show_home\": \"1\",\n            \"title\": \"Show\",\n            \"image\": \"shop_cat_1716128029_7f93cdf58c78f3192deb.jpg\",\n            \"createdBy\": 1,\n            \"createdDtm\": \"2024-05-19 20:12:35\",\n            \"updatedBy\": null,\n            \"updatedDtm\": \"2024-05-19 20:12:35\",\n            \"deleted\": null,\n            \"deletedRole\": null\n        },\n        {\n            \"shop_cat_id\": 3,\n            \"name\": \"Grocery\",\n            \"parent_cat_id\": 0,\n            \"show_home\": \"1\",\n            \"title\": \"Nice\",\n            \"image\": null,\n            \"createdBy\": 1,\n            \"createdDtm\": \"2024-05-20 19:59:54\",\n            \"updatedBy\": null,\n            \"updatedDtm\": \"2024-05-20 19:59:54\",\n            \"deleted\": null,\n            \"deletedRole\": null\n        },\n        {\n            \"shop_cat_id\": 4,\n            \"name\": \"Fast Food\",\n            \"parent_cat_id\": 3,\n            \"show_home\": \"0\",\n            \"title\": null,\n            \"image\": null,\n            \"createdBy\": 1,\n            \"createdDtm\": \"2024-05-20 20:01:14\",\n            \"updatedBy\": null,\n            \"updatedDtm\": \"2024-05-20 20:01:14\",\n            \"deleted\": null,\n            \"deletedRole\": null\n        },\n        {\n            \"shop_cat_id\": 5,\n            \"name\": \"Men\",\n            \"parent_cat_id\": 0,\n            \"show_home\": \"1\",\n            \"title\": \"Nice\",\n            \"image\": null,\n            \"createdBy\": 1,\n            \"createdDtm\": \"2024-05-26 10:37:59\",\n            \"updatedBy\": null,\n            \"updatedDtm\": \"2024-05-26 10:37:59\",\n            \"deleted\": null,\n            \"deletedRole\": null\n        },\n        {\n            \"shop_cat_id\": 6,\n            \"name\": \"T-shirt\",\n            \"parent_cat_id\": 5,\n            \"show_home\": \"0\",\n            \"title\": null,\n            \"image\": null,\n            \"createdBy\": 1,\n            \"createdDtm\": \"2024-05-26 10:38:16\",\n            \"updatedBy\": null,\n            \"updatedDtm\": \"2024-05-26 10:38:16\",\n            \"deleted\": null,\n            \"deletedRole\": null\n        }\n    ],\n    \"status\": 200\n}"
+            }
+          ]
+        },
+        {
+          "name": "Retrieve featured shop categories",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "search_item",
+                  "value": "Teer",
+                  "type": "text",
+                  "uuid": "4d621b27-6919-4eb4-9ce6-704890ff5f36"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{amar_bangla}}get_featured_shop_category",
+              "host": [
+                "{{amar_bangla}}get_featured_shop_category"
+              ]
+            },
+            "description": "Sumer admin login decs"
+          },
+          "response": [
+            {
+              "name": "Retrieve featured shop categories",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "search_item",
+                      "value": "Teer",
+                      "type": "text",
+                      "uuid": "4d621b27-6919-4eb4-9ce6-704890ff5f36"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{amar_bangla}}get_featured_shop_category",
+                  "host": [
+                    "{{amar_bangla}}get_featured_shop_category"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "127.0.0.1:8002"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.2.12"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 07 Apr 2026 06:29:53 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "X-RateLimit-Limit",
+                  "value": "60"
+                },
+                {
+                  "key": "X-RateLimit-Remaining",
+                  "value": "59"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"data\": [\n        {\n            \"shop_cat_id\": 1,\n            \"name\": \"Test\",\n            \"parent_cat_id\": 0,\n            \"show_home\": \"1\",\n            \"title\": \"Show\",\n            \"image\": \"shop_cat_1716127893_b6e26a651d87c0d0d7ea.jpg\",\n            \"createdBy\": 1,\n            \"createdDtm\": \"2024-05-19 13:03:44\",\n            \"updatedBy\": null,\n            \"updatedDtm\": \"2024-05-19 13:03:44\",\n            \"deleted\": null,\n            \"deletedRole\": null\n        },\n        {\n            \"shop_cat_id\": 2,\n            \"name\": \"test-2\",\n            \"parent_cat_id\": 1,\n            \"show_home\": \"1\",\n            \"title\": \"Show\",\n            \"image\": \"shop_cat_1716128029_7f93cdf58c78f3192deb.jpg\",\n            \"createdBy\": 1,\n            \"createdDtm\": \"2024-05-19 20:12:35\",\n            \"updatedBy\": null,\n            \"updatedDtm\": \"2024-05-19 20:12:35\",\n            \"deleted\": null,\n            \"deletedRole\": null\n        },\n        {\n            \"shop_cat_id\": 3,\n            \"name\": \"Grocery\",\n            \"parent_cat_id\": 0,\n            \"show_home\": \"1\",\n            \"title\": \"Nice\",\n            \"image\": null,\n            \"createdBy\": 1,\n            \"createdDtm\": \"2024-05-20 19:59:54\",\n            \"updatedBy\": null,\n            \"updatedDtm\": \"2024-05-20 19:59:54\",\n            \"deleted\": null,\n            \"deletedRole\": null\n        },\n        {\n            \"shop_cat_id\": 5,\n            \"name\": \"Men\",\n            \"parent_cat_id\": 0,\n            \"show_home\": \"1\",\n            \"title\": \"Nice\",\n            \"image\": null,\n            \"createdBy\": 1,\n            \"createdDtm\": \"2024-05-26 10:37:59\",\n            \"updatedBy\": null,\n            \"updatedDtm\": \"2024-05-26 10:37:59\",\n            \"deleted\": null,\n            \"deletedRole\": null\n        }\n    ],\n    \"status\": 200\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Global Address",
+      "item": [
+        {
+          "name": "Retrieve all divisions",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "search_item",
+                  "value": "Teer",
+                  "type": "text",
+                  "uuid": "4d621b27-6919-4eb4-9ce6-704890ff5f36"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{amar_bangla}}get_all_divisions",
+              "host": [
+                "{{amar_bangla}}get_all_divisions"
+              ]
+            },
+            "description": "Sumer admin login decs"
+          },
+          "response": [
+            {
+              "name": "Retrieve all divisions",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "search_item",
+                      "value": "Teer",
+                      "type": "text",
+                      "uuid": "4d621b27-6919-4eb4-9ce6-704890ff5f36"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{amar_bangla}}get_all_divisions",
+                  "host": [
+                    "{{amar_bangla}}get_all_divisions"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "127.0.0.1:8002"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.2.12"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 07 Apr 2026 06:33:43 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "X-RateLimit-Limit",
+                  "value": "60"
+                },
+                {
+                  "key": "X-RateLimit-Remaining",
+                  "value": "59"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"data\": [\n        {\n            \"id\": \"1\",\n            \"name\": \"Chattagram\",\n            \"bn_name\": \"চট্টগ্রাম\",\n            \"url\": \"www.chittagongdiv.gov.bd\"\n        },\n        {\n            \"id\": \"2\",\n            \"name\": \"Rajshahi\",\n            \"bn_name\": \"রাজশাহী\",\n            \"url\": \"www.rajshahidiv.gov.bd\"\n        },\n        {\n            \"id\": \"3\",\n            \"name\": \"Khulna\",\n            \"bn_name\": \"খুলনা\",\n            \"url\": \"www.khulnadiv.gov.bd\"\n        },\n        {\n            \"id\": \"4\",\n            \"name\": \"Barisal\",\n            \"bn_name\": \"বরিশাল\",\n            \"url\": \"www.barisaldiv.gov.bd\"\n        },\n        {\n            \"id\": \"5\",\n            \"name\": \"Sylhet\",\n            \"bn_name\": \"সিলেট\",\n            \"url\": \"www.sylhetdiv.gov.bd\"\n        },\n        {\n            \"id\": \"6\",\n            \"name\": \"Dhaka\",\n            \"bn_name\": \"ঢাকা\",\n            \"url\": \"www.dhakadiv.gov.bd\"\n        },\n        {\n            \"id\": \"7\",\n            \"name\": \"Rangpur\",\n            \"bn_name\": \"রংপুর\",\n            \"url\": \"www.rangpurdiv.gov.bd\"\n        },\n        {\n            \"id\": \"8\",\n            \"name\": \"Mymensingh\",\n            \"bn_name\": \"ময়মনসিংহ\",\n            \"url\": \"www.mymensinghdiv.gov.bd\"\n        }\n    ],\n    \"status\": 200\n}"
+            }
+          ]
+        },
+        {
+          "name": "Retrieve districts by division ID",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "search_item",
+                  "value": "Teer",
+                  "type": "text",
+                  "uuid": "4d621b27-6919-4eb4-9ce6-704890ff5f36"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{amar_bangla}}get_districts_list_by_division/2",
+              "host": [
+                "{{amar_bangla}}get_districts_list_by_division"
+              ],
+              "path": [
+                "2"
+              ]
+            },
+            "description": "Sumer admin login decs"
+          },
+          "response": [
+            {
+              "name": "Retrieve districts by division ID",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "search_item",
+                      "value": "Teer",
+                      "type": "text",
+                      "uuid": "4d621b27-6919-4eb4-9ce6-704890ff5f36"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{amar_bangla}}get_districts_list_by_division/2",
+                  "host": [
+                    "{{amar_bangla}}get_districts_list_by_division"
+                  ],
+                  "path": [
+                    "2"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "127.0.0.1:8002"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.2.12"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 07 Apr 2026 06:35:26 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "X-RateLimit-Limit",
+                  "value": "60"
+                },
+                {
+                  "key": "X-RateLimit-Remaining",
+                  "value": "59"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"data\": [\n        {\n            \"id\": \"12\",\n            \"name\": \"Sirajganj\"\n        },\n        {\n            \"id\": \"13\",\n            \"name\": \"Pabna\"\n        },\n        {\n            \"id\": \"14\",\n            \"name\": \"Bogura\"\n        },\n        {\n            \"id\": \"15\",\n            \"name\": \"Rajshahi\"\n        },\n        {\n            \"id\": \"16\",\n            \"name\": \"Natore\"\n        },\n        {\n            \"id\": \"17\",\n            \"name\": \"Joypurhat\"\n        },\n        {\n            \"id\": \"18\",\n            \"name\": \"Chapainawabganj\"\n        },\n        {\n            \"id\": \"19\",\n            \"name\": \"Naogaon\"\n        }\n    ],\n    \"status\": 200\n}"
+            }
+          ]
+        },
+        {
+          "name": "Retrieve subdistricts by district ID",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "search_item",
+                  "value": "Teer",
+                  "type": "text",
+                  "uuid": "4d621b27-6919-4eb4-9ce6-704890ff5f36"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{amar_bangla}}get_sub_districts_list_by_district/2",
+              "host": [
+                "{{amar_bangla}}get_sub_districts_list_by_district"
+              ],
+              "path": [
+                "2"
+              ]
+            },
+            "description": "Sumer admin login decs"
+          },
+          "response": [
+            {
+              "name": "Retrieve subdistricts by district ID",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "search_item",
+                      "value": "Teer",
+                      "type": "text",
+                      "uuid": "4d621b27-6919-4eb4-9ce6-704890ff5f36"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{amar_bangla}}get_sub_districts_list_by_district/2",
+                  "host": [
+                    "{{amar_bangla}}get_sub_districts_list_by_district"
+                  ],
+                  "path": [
+                    "2"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "127.0.0.1:8002"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.2.12"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 07 Apr 2026 06:40:51 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "X-RateLimit-Limit",
+                  "value": "60"
+                },
+                {
+                  "key": "X-RateLimit-Remaining",
+                  "value": "59"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"data\": [\n        {\n            \"id\": \"18\",\n            \"name\": \"Chhagalnaiya\"\n        },\n        {\n            \"id\": \"19\",\n            \"name\": \"Feni Sadar\"\n        },\n        {\n            \"id\": \"20\",\n            \"name\": \"Sonagazi\"\n        },\n        {\n            \"id\": \"21\",\n            \"name\": \"Fulgazi\"\n        },\n        {\n            \"id\": \"22\",\n            \"name\": \"Parshuram\"\n        },\n        {\n            \"id\": \"23\",\n            \"name\": \"Daganbhuiyan\"\n        }\n    ],\n    \"status\": 200\n}"
+            }
+          ]
+        },
+        {
+          "name": "Retrieve all Pourashova or Union names",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "search_item",
+                  "value": "Teer",
+                  "type": "text",
+                  "uuid": "4d621b27-6919-4eb4-9ce6-704890ff5f36"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{amar_bangla}}get_pourashava_or_union",
+              "host": [
+                "{{amar_bangla}}get_pourashava_or_union"
+              ]
+            },
+            "description": "Sumer admin login decs"
+          },
+          "response": [
+            {
+              "name": "Retrieve all Pourashova or Union names",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "search_item",
+                      "value": "Teer",
+                      "type": "text",
+                      "uuid": "4d621b27-6919-4eb4-9ce6-704890ff5f36"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{amar_bangla}}get_pourashava_or_union",
+                  "host": [
+                    "{{amar_bangla}}get_pourashava_or_union"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "127.0.0.1:8002"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.2.12"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 07 Apr 2026 06:41:45 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "X-RateLimit-Limit",
+                  "value": "60"
+                },
+                {
+                  "key": "X-RateLimit-Remaining",
+                  "value": "58"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"Pourashava\"\n        },\n        {\n            \"id\": 2,\n            \"name\": \"Union\"\n        }\n    ],\n    \"status\": 200\n}"
+            }
+          ]
+        },
+        {
+          "name": "Retrieve all Ward names",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "search_item",
+                  "value": "Teer",
+                  "type": "text",
+                  "uuid": "4d621b27-6919-4eb4-9ce6-704890ff5f36"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{amar_bangla}}get_ward",
+              "host": [
+                "{{amar_bangla}}get_ward"
+              ]
+            },
+            "description": "Sumer admin login decs"
+          },
+          "response": [
+            {
+              "name": "Retrieve all Ward names",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "search_item",
+                      "value": "Teer",
+                      "type": "text",
+                      "uuid": "4d621b27-6919-4eb4-9ce6-704890ff5f36"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{amar_bangla}}get_ward",
+                  "host": [
+                    "{{amar_bangla}}get_ward"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "127.0.0.1:8002"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.2.12"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 07 Apr 2026 06:43:03 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "X-RateLimit-Limit",
+                  "value": "60"
+                },
+                {
+                  "key": "X-RateLimit-Remaining",
+                  "value": "59"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"ward 1\"\n        },\n        {\n            \"id\": 2,\n            \"name\": \"ward 2\"\n        },\n        {\n            \"id\": 3,\n            \"name\": \"ward 3\"\n        },\n        {\n            \"id\": 4,\n            \"name\": \"ward 4\"\n        },\n        {\n            \"id\": 5,\n            \"name\": \"ward 5\"\n        },\n        {\n            \"id\": 6,\n            \"name\": \"ward 6\"\n        },\n        {\n            \"id\": 7,\n            \"name\": \"ward 7\"\n        },\n        {\n            \"id\": 8,\n            \"name\": \"ward 8\"\n        },\n        {\n            \"id\": 9,\n            \"name\": \"ward 9\"\n        },\n        {\n            \"id\": 10,\n            \"name\": \"ward 10\"\n        },\n        {\n            \"id\": 11,\n            \"name\": \"ward 11\"\n        },\n        {\n            \"id\": 12,\n            \"name\": \"ward 12\"\n        },\n        {\n            \"id\": 13,\n            \"name\": \"ward 13\"\n        },\n        {\n            \"id\": 14,\n            \"name\": \"ward 14\"\n        },\n        {\n            \"id\": 15,\n            \"name\": \"ward 15\"\n        },\n        {\n            \"id\": 16,\n            \"name\": \"ward 16\"\n        },\n        {\n            \"id\": 17,\n            \"name\": \"ward 17\"\n        },\n        {\n            \"id\": 18,\n            \"name\": \"ward 18\"\n        },\n        {\n            \"id\": 19,\n            \"name\": \"ward 19\"\n        },\n        {\n            \"id\": 20,\n            \"name\": \"ward 20\"\n        },\n        {\n            \"id\": 21,\n            \"name\": \"ward 21\"\n        },\n        {\n            \"id\": 22,\n            \"name\": \"ward 22\"\n        },\n        {\n            \"id\": 23,\n            \"name\": \"ward 23\"\n        },\n        {\n            \"id\": 24,\n            \"name\": \"ward 24\"\n        },\n        {\n            \"id\": 25,\n            \"name\": \"ward 25\"\n        },\n        {\n            \"id\": 26,\n            \"name\": \"ward 26\"\n        },\n        {\n            \"id\": 27,\n            \"name\": \"ward 27\"\n        },\n        {\n            \"id\": 28,\n            \"name\": \"ward 28\"\n        },\n        {\n            \"id\": 29,\n            \"name\": \"ward 29\"\n        },\n        {\n            \"id\": 30,\n            \"name\": \"ward 30\"\n        },\n        {\n            \"id\": 31,\n            \"name\": \"ward 31\"\n        },\n        {\n            \"id\": 32,\n            \"name\": \"ward 32\"\n        },\n        {\n            \"id\": 33,\n            \"name\": \"ward 33\"\n        },\n        {\n            \"id\": 34,\n            \"name\": \"ward 34\"\n        },\n        {\n            \"id\": 35,\n            \"name\": \"ward 35\"\n        },\n        {\n            \"id\": 36,\n            \"name\": \"ward 36\"\n        },\n        {\n            \"id\": 37,\n            \"name\": \"ward 37\"\n        },\n        {\n            \"id\": 38,\n            \"name\": \"ward 38\"\n        },\n        {\n            \"id\": 39,\n            \"name\": \"ward 39\"\n        },\n        {\n            \"id\": 40,\n            \"name\": \"ward 40\"\n        },\n        {\n            \"id\": 41,\n            \"name\": \"ward 41\"\n        },\n        {\n            \"id\": 42,\n            \"name\": \"ward 42\"\n        },\n        {\n            \"id\": 43,\n            \"name\": \"ward 43\"\n        },\n        {\n            \"id\": 44,\n            \"name\": \"ward 44\"\n        },\n        {\n            \"id\": 45,\n            \"name\": \"ward 45\"\n        },\n        {\n            \"id\": 46,\n            \"name\": \"ward 46\"\n        },\n        {\n            \"id\": 47,\n            \"name\": \"ward 47\"\n        },\n        {\n            \"id\": 48,\n            \"name\": \"ward 48\"\n        },\n        {\n            \"id\": 49,\n            \"name\": \"ward 49\"\n        },\n        {\n            \"id\": 50,\n            \"name\": \"ward 50\"\n        },\n        {\n            \"id\": 51,\n            \"name\": \"ward 51\"\n        },\n        {\n            \"id\": 52,\n            \"name\": \"ward 52\"\n        },\n        {\n            \"id\": 53,\n            \"name\": \"ward 53\"\n        },\n        {\n            \"id\": 54,\n            \"name\": \"ward 54\"\n        },\n        {\n            \"id\": 55,\n            \"name\": \"ward 55\"\n        },\n        {\n            \"id\": 56,\n            \"name\": \"ward 56\"\n        },\n        {\n            \"id\": 57,\n            \"name\": \"ward 57\"\n        },\n        {\n            \"id\": 58,\n            \"name\": \"ward 58\"\n        },\n        {\n            \"id\": 59,\n            \"name\": \"ward 59\"\n        },\n        {\n            \"id\": 60,\n            \"name\": \"ward 60\"\n        },\n        {\n            \"id\": 61,\n            \"name\": \"ward 61\"\n        },\n        {\n            \"id\": 62,\n            \"name\": \"ward 62\"\n        },\n        {\n            \"id\": 63,\n            \"name\": \"ward 63\"\n        },\n        {\n            \"id\": 64,\n            \"name\": \"ward 64\"\n        },\n        {\n            \"id\": 65,\n            \"name\": \"ward 65\"\n        }\n    ],\n    \"status\": 200\n}"
+            }
+          ]
+        },
+        {
+          "name": "Retrieve districts by division ID",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "search_item",
+                  "value": "Teer",
+                  "type": "text",
+                  "uuid": "4d621b27-6919-4eb4-9ce6-704890ff5f36"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{amar_bangla}}get_districts_by_division/2/0/",
+              "host": [
+                "{{amar_bangla}}get_districts_by_division"
+              ],
+              "path": [
+                "2",
+                "0",
+                ""
+              ]
+            },
+            "description": "Sumer admin login decs"
+          },
+          "response": [
+            {
+              "name": "Retrieve all Ward names",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "search_item",
+                      "value": "Teer",
+                      "type": "text",
+                      "uuid": "4d621b27-6919-4eb4-9ce6-704890ff5f36"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{amar_bangla}}get_ward",
+                  "host": [
+                    "{{amar_bangla}}get_ward"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "127.0.0.1:8002"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.2.12"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 07 Apr 2026 06:43:03 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "X-RateLimit-Limit",
+                  "value": "60"
+                },
+                {
+                  "key": "X-RateLimit-Remaining",
+                  "value": "59"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"ward 1\"\n        },\n        {\n            \"id\": 2,\n            \"name\": \"ward 2\"\n        },\n        {\n            \"id\": 3,\n            \"name\": \"ward 3\"\n        },\n        {\n            \"id\": 4,\n            \"name\": \"ward 4\"\n        },\n        {\n            \"id\": 5,\n            \"name\": \"ward 5\"\n        },\n        {\n            \"id\": 6,\n            \"name\": \"ward 6\"\n        },\n        {\n            \"id\": 7,\n            \"name\": \"ward 7\"\n        },\n        {\n            \"id\": 8,\n            \"name\": \"ward 8\"\n        },\n        {\n            \"id\": 9,\n            \"name\": \"ward 9\"\n        },\n        {\n            \"id\": 10,\n            \"name\": \"ward 10\"\n        },\n        {\n            \"id\": 11,\n            \"name\": \"ward 11\"\n        },\n        {\n            \"id\": 12,\n            \"name\": \"ward 12\"\n        },\n        {\n            \"id\": 13,\n            \"name\": \"ward 13\"\n        },\n        {\n            \"id\": 14,\n            \"name\": \"ward 14\"\n        },\n        {\n            \"id\": 15,\n            \"name\": \"ward 15\"\n        },\n        {\n            \"id\": 16,\n            \"name\": \"ward 16\"\n        },\n        {\n            \"id\": 17,\n            \"name\": \"ward 17\"\n        },\n        {\n            \"id\": 18,\n            \"name\": \"ward 18\"\n        },\n        {\n            \"id\": 19,\n            \"name\": \"ward 19\"\n        },\n        {\n            \"id\": 20,\n            \"name\": \"ward 20\"\n        },\n        {\n            \"id\": 21,\n            \"name\": \"ward 21\"\n        },\n        {\n            \"id\": 22,\n            \"name\": \"ward 22\"\n        },\n        {\n            \"id\": 23,\n            \"name\": \"ward 23\"\n        },\n        {\n            \"id\": 24,\n            \"name\": \"ward 24\"\n        },\n        {\n            \"id\": 25,\n            \"name\": \"ward 25\"\n        },\n        {\n            \"id\": 26,\n            \"name\": \"ward 26\"\n        },\n        {\n            \"id\": 27,\n            \"name\": \"ward 27\"\n        },\n        {\n            \"id\": 28,\n            \"name\": \"ward 28\"\n        },\n        {\n            \"id\": 29,\n            \"name\": \"ward 29\"\n        },\n        {\n            \"id\": 30,\n            \"name\": \"ward 30\"\n        },\n        {\n            \"id\": 31,\n            \"name\": \"ward 31\"\n        },\n        {\n            \"id\": 32,\n            \"name\": \"ward 32\"\n        },\n        {\n            \"id\": 33,\n            \"name\": \"ward 33\"\n        },\n        {\n            \"id\": 34,\n            \"name\": \"ward 34\"\n        },\n        {\n            \"id\": 35,\n            \"name\": \"ward 35\"\n        },\n        {\n            \"id\": 36,\n            \"name\": \"ward 36\"\n        },\n        {\n            \"id\": 37,\n            \"name\": \"ward 37\"\n        },\n        {\n            \"id\": 38,\n            \"name\": \"ward 38\"\n        },\n        {\n            \"id\": 39,\n            \"name\": \"ward 39\"\n        },\n        {\n            \"id\": 40,\n            \"name\": \"ward 40\"\n        },\n        {\n            \"id\": 41,\n            \"name\": \"ward 41\"\n        },\n        {\n            \"id\": 42,\n            \"name\": \"ward 42\"\n        },\n        {\n            \"id\": 43,\n            \"name\": \"ward 43\"\n        },\n        {\n            \"id\": 44,\n            \"name\": \"ward 44\"\n        },\n        {\n            \"id\": 45,\n            \"name\": \"ward 45\"\n        },\n        {\n            \"id\": 46,\n            \"name\": \"ward 46\"\n        },\n        {\n            \"id\": 47,\n            \"name\": \"ward 47\"\n        },\n        {\n            \"id\": 48,\n            \"name\": \"ward 48\"\n        },\n        {\n            \"id\": 49,\n            \"name\": \"ward 49\"\n        },\n        {\n            \"id\": 50,\n            \"name\": \"ward 50\"\n        },\n        {\n            \"id\": 51,\n            \"name\": \"ward 51\"\n        },\n        {\n            \"id\": 52,\n            \"name\": \"ward 52\"\n        },\n        {\n            \"id\": 53,\n            \"name\": \"ward 53\"\n        },\n        {\n            \"id\": 54,\n            \"name\": \"ward 54\"\n        },\n        {\n            \"id\": 55,\n            \"name\": \"ward 55\"\n        },\n        {\n            \"id\": 56,\n            \"name\": \"ward 56\"\n        },\n        {\n            \"id\": 57,\n            \"name\": \"ward 57\"\n        },\n        {\n            \"id\": 58,\n            \"name\": \"ward 58\"\n        },\n        {\n            \"id\": 59,\n            \"name\": \"ward 59\"\n        },\n        {\n            \"id\": 60,\n            \"name\": \"ward 60\"\n        },\n        {\n            \"id\": 61,\n            \"name\": \"ward 61\"\n        },\n        {\n            \"id\": 62,\n            \"name\": \"ward 62\"\n        },\n        {\n            \"id\": 63,\n            \"name\": \"ward 63\"\n        },\n        {\n            \"id\": 64,\n            \"name\": \"ward 64\"\n        },\n        {\n            \"id\": 65,\n            \"name\": \"ward 65\"\n        }\n    ],\n    \"status\": 200\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Website Settings",
+      "item": [
+        {
+          "name": "Retrieve slider banners",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "search_item",
+                  "value": "Teer",
+                  "type": "text",
+                  "uuid": "4d621b27-6919-4eb4-9ce6-704890ff5f36"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{amar_bangla}}get_sliders",
+              "host": [
+                "{{amar_bangla}}get_sliders"
+              ]
+            },
+            "description": "Sumer admin login decs"
+          },
+          "response": [
+            {
+              "name": "Retrieve slider banners",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "search_item",
+                      "value": "Teer",
+                      "type": "text",
+                      "uuid": "4d621b27-6919-4eb4-9ce6-704890ff5f36"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{amar_bangla}}get_sliders",
+                  "host": [
+                    "{{amar_bangla}}get_sliders"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "127.0.0.1:8002"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.2.12"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 07 Apr 2026 06:56:51 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "X-RateLimit-Limit",
+                  "value": "60"
+                },
+                {
+                  "key": "X-RateLimit-Remaining",
+                  "value": "59"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"data\": [\n        {\n            \"slider\": \"slider_mo.jpg\"\n        },\n        {\n            \"slider\": \"slider_mo.jpg\"\n        },\n        {\n            \"slider\": \"slider_mo.jpg\"\n        }\n    ],\n    \"path\": \"http://127.0.0.1:8002/uploads/website_image\",\n    \"status\": 200\n}"
+            }
+          ]
+        },
+        {
+          "name": "Retrieve website setting by label",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "search_item",
+                  "value": "Teer",
+                  "type": "text",
+                  "uuid": "4d621b27-6919-4eb4-9ce6-704890ff5f36"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{amar_bangla}}get_website_settings/logo",
+              "host": [
+                "{{amar_bangla}}get_website_settings"
+              ],
+              "path": [
+                "logo"
+              ]
+            },
+            "description": "Sumer admin login decs"
+          },
+          "response": [
+            {
+              "name": "Retrieve website setting by label",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "search_item",
+                      "value": "Teer",
+                      "type": "text",
+                      "uuid": "4d621b27-6919-4eb4-9ce6-704890ff5f36"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{amar_bangla}}get_website_settings/logo",
+                  "host": [
+                    "{{amar_bangla}}get_website_settings"
+                  ],
+                  "path": [
+                    "logo"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "127.0.0.1:8002"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.2.12"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 07 Apr 2026 06:58:38 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "X-RateLimit-Limit",
+                  "value": "60"
+                },
+                {
+                  "key": "X-RateLimit-Remaining",
+                  "value": "59"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"data\": \"logo_1716792587_cf8a17eaa3ee4ac34a3a.jpg\",\n    \"status\": 200\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Customer Authentication",
+      "item": [
+        {
+          "name": "Customer registration",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "mobile",
+                  "value": "01834672015",
+                  "type": "text",
+                  "uuid": "a6a3aebb-6ad5-4a9f-ab2a-be3722bd7041"
+                },
+                {
+                  "key": "customer_name",
+                  "value": "rahi",
+                  "type": "text",
+                  "uuid": "ac7b6003-1dd1-4189-9a67-a9f17c59f08e"
+                },
+                {
+                  "key": "password",
+                  "value": "12345678",
+                  "type": "text",
+                  "uuid": "7b291a5e-b70f-4125-965a-3a94f01eab5b"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{amar_bangla}}customer_register",
+              "host": [
+                "{{amar_bangla}}customer_register"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Customer login",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "mobile",
+                  "value": "01834672015",
+                  "type": "text",
+                  "uuid": "4ed37d51-cc5a-4f71-8c39-004d1cb7669f"
+                },
+                {
+                  "key": "password",
+                  "value": "12345678",
+                  "type": "text",
+                  "uuid": "904a2c29-6ed2-4c28-ac44-ad182a8ea863"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{amar_bangla}}customer_login",
+              "host": [
+                "{{amar_bangla}}customer_login"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Order",
+      "item": [
+        {
+          "name": "create order",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"userId\": 1,\r\n  \"shopId_cus\": 1,\r\n  \"customer_id\": 3,\r\n  \"productId\": [1, 3],\r\n  \"qty[]\": [2, 1],\r\n  \"price\": [500, 1200],\r\n  \"subtotal\": [1000, 1200],\r\n  \"suballtotal\": 2200,\r\n  \"fast_delivery\": true,\r\n  \"grandtotal2\": 2300,\r\n  \"grandtotal\": 2300,\r\n  \"grandtotaldue\": 0,\r\n  \"division\": \"Khulna\",\r\n  \"district\": \"Jessore\",\r\n  \"sub_district\": \"Noapara\",\r\n  \"union_pourashava\": \"Noapara Union\",\r\n  \"ward\": \"Ward-3\",\r\n  \"address\": \"House 12, Road 5, Noapara, Jessore\"\r\n}\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{amar_bangla}}order/create",
+              "host": [
+                "{{amar_bangla}}order"
+              ],
+              "path": [
+                "create"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "auth_api",
+      "value": "",
+      "type": "default"
+    }
+  ]
+}

@@ -4,7 +4,7 @@ namespace Tests\Unit;
 
 use ReflectionMethod;
 use Tests\TestCase;
-use App\Http\Controllers\ProductContoller;
+use App\Http\Controllers\ProductController;
 
 class SearchProductsAPITest extends TestCase
 {
@@ -49,7 +49,7 @@ class SearchProductsAPITest extends TestCase
      * @throws \ReflectionException
      */
     public function testSearchProduct() : void {
-        $productController = new ProductContoller();
+        $productController = new ProductController();
         $response = new ReflectionMethod($productController, 'searchProduct');
         $result = $response->invokeArgs($productController, array(2, 2));
 //        $response = $reflectionMethod->getMethod( 'searchProduct');
@@ -66,7 +66,7 @@ class SearchProductsAPITest extends TestCase
      * @throws \ReflectionException
      */
     public function testSearchShop() : void {
-        $productController = new ProductContoller();
+        $productController = new ProductController();
         $response = new ReflectionMethod($productController, 'searchShop');
         $result = $response->invokeArgs($productController, array(2, 2));
         $this->assertArrayHasKey('data', $result->original);
@@ -86,26 +86,26 @@ class SearchProductsAPITest extends TestCase
 //    }
 //
 //    public function testGetPopularProductListFunction() : void {
-//        $productController = new ProductContoller();
+//        $productController = new ProductController();
 //        $response = $productController->getPopularProductList();
 ////        $data = json_decode($response, true);
 //        $this->assertArrayHasKey('data', $response->original);
 //    }
 //
 //    public function testGetPopularProductListFunctionWithLimit() : void {
-//        $productController = new ProductContoller();
+//        $productController = new ProductController();
 //        $response = $productController->getPopularProductList(2);
 //        $this->assertArrayHasKey('data', $response->original);
 //    }
 //
 //    public function testGetPopularProductListFunctionWithLimitAndOrderType() : void {
-//        $productController = new ProductContoller();
+//        $productController = new ProductController();
 //        $response = $productController->getPopularProductList(2, 'desc');
 //        $this->assertArrayHasKey('data', $response->original);
 //    }
 //
 //    public function testGetPopularProductListFunctionWithLimitZeroAndOrderType() : void {
-//        $productController = new ProductContoller();
+//        $productController = new ProductController();
 //        $response = $productController->getPopularProductList(0, 'asc');
 //        $this->assertArrayHasKey('data', $response->original);
 //    }
@@ -143,26 +143,26 @@ class SearchProductsAPITest extends TestCase
 //    }
 //
 //    public function testGetHotProductListFunction() : void {
-//        $productController = new ProductContoller();
+//        $productController = new ProductController();
 //        $response = $productController->getHotProductList();
 ////        $data = json_decode($response, true);
 //        $this->assertArrayHasKey('data', $response->original);
 //    }
 //
 //    public function testGetHotProductListFunctionWithLimit() : void {
-//        $productController = new ProductContoller();
+//        $productController = new ProductController();
 //        $response = $productController->getHotProductList(2);
 //        $this->assertArrayHasKey('data', $response->original);
 //    }
 //
 //    public function testGetHotProductListFunctionWithLimitAndOrderType() : void {
-//        $productController = new ProductContoller();
+//        $productController = new ProductController();
 //        $response = $productController->getHotProductList(2, 'desc');
 //        $this->assertArrayHasKey('data', $response->original);
 //    }
 //
 //    public function testGetHotProductListFunctionWithLimitZeroAndOrderType() : void {
-//        $productController = new ProductContoller();
+//        $productController = new ProductController();
 //        $response = $productController->getHotProductList(0, 'asc');
 //        $this->assertArrayHasKey('data', $response->original);
 //    }
@@ -199,25 +199,25 @@ class SearchProductsAPITest extends TestCase
 //
 //
 //    public function testGetFeaturedProductListFunction() : void {
-//        $productController = new ProductContoller();
+//        $productController = new ProductController();
 //        $response = $productController->getFeaturedProductList();
 //        $this->assertArrayHasKey('data', $response->original);
 //    }
 //
 //    public function testGetFeaturedProductListFunctionWithLimit() : void {
-//        $productController = new ProductContoller();
+//        $productController = new ProductController();
 //        $response = $productController->getFeaturedProductList(2);
 //        $this->assertArrayHasKey('data', $response->original);
 //    }
 //
 //    public function testGetFeaturedProductListFunctionWithLimitAndOrderType() : void {
-//        $productController = new ProductContoller();
+//        $productController = new ProductController();
 //        $response = $productController->getFeaturedProductList(2, 'desc');
 //        $this->assertArrayHasKey('data', $response->original);
 //    }
 //
 //    public function testGetFeaturedProductListFunctionWithLimitZeroAndOrderType() : void {
-//        $productController = new ProductContoller();
+//        $productController = new ProductController();
 //        $response = $productController->getFeaturedProductList(0, 'asc');
 //        $this->assertArrayHasKey('data', $response->original);
 //    }
@@ -249,7 +249,7 @@ class SearchProductsAPITest extends TestCase
 //
 //
 //    public function testGetProductDetailsFunction() : void {
-//        $productController = new ProductContoller();
+//        $productController = new ProductController();
 //        $response = $productController->getProductDetails(2, 6);
 //        $this->assertArrayHasKey('data', $response->original);
 //    }

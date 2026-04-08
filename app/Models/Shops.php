@@ -9,4 +9,13 @@ class Shops extends Model
 {
     use HasFactory;
     protected $table = 'shops';
+    protected $primaryKey = 'sch_id';
+
+    /**
+     * A shop can have many products.
+     */
+    public function products()
+    {
+        return $this->hasMany(Products::class, 'sch_id', 'sch_id');
+    }
 }
